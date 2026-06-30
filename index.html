@@ -1618,7 +1618,189 @@
       box-shadow: 0 24px 70px rgba(var(--edge-rgb), 0.11);
     }
 
-    @media (max-width: 980px) {
+    
+    /* Final responsive and card-edge polish */
+    main,
+    section,
+    .container,
+    .grid,
+    .grid-2,
+    .pricing,
+    .profile-layout,
+    .contact-grid,
+    .contact-form,
+    .footer-inner {
+      min-width: 0;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+      max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      max-width: 100%;
+    }
+
+    #contact {
+      padding-bottom: 96px;
+    }
+
+    .contact-info {
+      position: static;
+    }
+
+    .contact-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+      gap: clamp(22px, 3vw, 34px);
+      overflow: visible;
+    }
+
+    .contact-form {
+      overflow: visible;
+    }
+
+    .next-box {
+      overflow: hidden;
+    }
+
+    footer {
+      clear: both;
+      padding: 42px 0 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+      width: 100%;
+    }
+
+    .footer-copy {
+      min-width: 0;
+      max-width: 680px;
+    }
+
+    .footer-copy span {
+      overflow-wrap: anywhere;
+    }
+
+    .footer-socials {
+      min-width: 0;
+      justify-content: flex-end;
+    }
+
+    .edge-card {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .edge-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .edge-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      padding: 1px;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      background:
+        radial-gradient(
+          115px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(var(--edge-rgb, 56, 189, 248), 0.96),
+          rgba(var(--edge-rgb, 56, 189, 248), 0.42) 22%,
+          transparent 56%
+        );
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      transition: opacity 0.22s ease;
+    }
+
+    .edge-card:hover::after {
+      opacity: 1;
+    }
+
+    .profile-story-card.edge-card {
+      overflow: visible;
+    }
+
+    .resume-menu,
+    .resume-menu-panel {
+      z-index: 20;
+    }
+
+    @media (max-width: 1100px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .contact-grid {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      #contact {
+        padding-bottom: 74px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .footer-socials {
+        justify-content: flex-start;
+      }
+
+      .footer-socials a {
+        flex: 1 1 150px;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .contact-grid,
+      .contact-form,
+      .dashboard-card,
+      .price-card,
+      .card,
+      .profile-story-card,
+      .profile-identity-card {
+        padding: 18px;
+      }
+
+      .faq-answer {
+        padding-left: 18px;
+      }
+
+      .footer-socials a {
+        flex-basis: 100%;
+      }
+    }
+
+@media (max-width: 980px) {
       .hero,
       .contact-grid {
         grid-template-columns: 1fr;
@@ -2931,9 +3113,38 @@
     const urlParams = new URLSearchParams(window.location.search);
     let formStarted = false;
 
-    document.querySelectorAll(
-      ".process .card, .edge-card, .hero-panel, .dashboard-card, .metric, .audit-item, section:not(.process) .card, .price-card, .faq-item, .profile-story-card, .profile-identity-card, .profile-mini-card, .contact-grid, .contact-form, .next-box, .rate-note"
-    ).forEach(function(card) {
+    const edgeTargets = document.querySelectorAll([
+      ".card",
+      ".price-card",
+      ".faq-item",
+      ".metric",
+      ".audit-item",
+      ".next-box",
+      ".contact-form",
+      ".rate-note",
+      ".dashboard-card",
+      ".profile-story-card",
+      ".profile-identity-card",
+      ".profile-mini-card",
+      ".footer-socials a"
+    ].join(", "));
+
+    edgeTargets.forEach(function(card, index) {
+      if (!card.classList.contains("edge-card")) {
+        card.classList.add("edge-card");
+      }
+
+      if (
+        !card.classList.contains("edge-cyan") &&
+        !card.classList.contains("edge-green") &&
+        !card.classList.contains("edge-violet")
+      ) {
+        const colorClass = index % 3 === 1 ? "edge-green" : index % 3 === 2 ? "edge-violet" : "edge-cyan";
+        card.classList.add(colorClass);
+      }
+    });
+
+    document.querySelectorAll(".process .card, .edge-card").forEach(function(card) {
       card.addEventListener("mousemove", function(event) {
         const rect = card.getBoundingClientRect();
         const x = event.clientX - rect.left;
