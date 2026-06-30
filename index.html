@@ -911,7 +911,7 @@
       <div>
         <div class="badge">
           <span class="badge-dot"></span>
-          Senior digital marketing, automation & operations systems specialist
+          Senior Digital Marketing, Automation & Operations Systems Specialist
         </div>
 
         <h1>
@@ -1667,14 +1667,14 @@
               </label>
 
               <label>
-  Preferred contact method <span class="optional">Optional</span>
-  <select id="contactMethod" name="contactMethod">
-    <option value="">Select contact method</option>
-    <option value="Email">Email</option>
-    <option value="WhatsApp">WhatsApp</option>
-    <option value="Messenger">Messenger</option>
-  </select>
-</label>
+                Preferred contact method <span class="optional">Optional</span>
+                <select id="contactMethod" name="contactMethod">
+                  <option value="">Select contact method</option>
+                  <option value="Email">Email</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Messenger">Messenger</option>
+                </select>
+              </label>
             </div>
 
             <div class="form-row">
@@ -1714,16 +1714,98 @@
       <span>Websites • Backend • Tracking • Automation • CRM • E-commerce • KYC • AI Systems</span>
     </div>
   </footer>
-
   <script>
+    window.dataLayer = window.dataLayer || [];
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwqLK1LfNJB4NxMHVn1bj2ycFQFe2w8T6XuwaHECiYOs-4ZsHA0eB7J41lrwb_I7_qf/exec";
+    const fallbackEmail = "dantefabillar.media@gmail.com";
+
     const form = document.getElementById("portfolioForm");
     const submitButton = document.getElementById("submitButton");
     const formMessage = document.getElementById("formMessage");
 
-    const fallbackEmail = "dantefabillar.media@gmail.com";
+    const urlParams = new URLSearchParams(window.location.search);
+    let formStarted = false;
+
+    function trackEvent(eventName, eventData = {}) {
+      window.dataLayer.push({
+        event: eventName,
+        ...eventData
+      });
+    }
+
+    function createSessionId() {
+      return "df_" + Date.now() + "_" + Math.random().toString(36).substring(2, 12);
+    }
+
+    function setSessionValue(key, value) {
+      if (!sessionStorage.getItem(key) && value) {
+        sessionStorage.setItem(key, value);
+      }
+    }
+
+    function getSessionValue(key) {
+      return sessionStorage.getItem(key) || "";
+    }
+
+    function getUrlOrSessionParam(queryKey, storageKey) {
+      const value = urlParams.get(queryKey);
+
+      if (value) {
+        sessionStorage.setItem(storageKey, value);
+        return value;
+      }
+
+      return getSessionValue(storageKey);
+    }
+
+    function getDeviceType() {
+      const width = window.innerWidth;
+
+      if (width <= 767) {
+        return "Mobile";
+      }
+
+      if (width <= 1024) {
+        return "Tablet";
+      }
+
+      return "Desktop";
+    }
+
+    function getBrowserName() {
+      const ua = navigator.userAgent;
+
+      if (ua.includes("Edg/")) return "Microsoft Edge";
+      if (ua.includes("Chrome/") && !ua.includes("Edg/")) return "Google Chrome";
+      if (ua.includes("Safari/") && !ua.includes("Chrome/")) return "Safari";
+      if (ua.includes("Firefox/")) return "Firefox";
+
+      return "Other";
+    }
 
     function isValidEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function getTrafficSource() {
+      const utmSource = getSessionValue("df_utm_source");
+
+      if (utmSource) {
+        return utmSource;
+      }
+
+      const referrer = getSessionValue("df_referrer");
+
+      if (referrer) {
+        try {
+          return new URL(referrer).hostname;
+        } catch (error) {
+          return referrer;
+        }
+      }
+
+      return "Direct / Website";
     }
 
     function showMessage(type, message) {
@@ -1753,7 +1835,40 @@
       ].join("\n");
     }
 
-    form.addEventListener("submit", function(event) {
+    function openEmailFallback(data) {
+      const subject = encodeURIComponent("Project Inquiry - Dante Fabillar Portfolio");
+      const body = encodeURIComponent(buildEmailBody(data));
+      window.location.href = "mailto:" + fallbackEmail + "?subject=" + subject + "&body=" + body;
+    }
+
+    if (!getSessionValue("df_session_id")) {
+      sessionStorage.setItem("df_session_id", createSessionId());
+    }
+
+    setSessionValue("df_landing_page", window.location.href);
+    setSessionValue("df_referrer", document.referrer || "");
+    setSessionValue("df_visit_timestamp", new Date().toISOString());
+
+    getUrlOrSessionParam("utm_source", "df_utm_source");
+    getUrlOrSessionParam("utm_medium", "df_utm_medium");
+    getUrlOrSessionParam("utm_campaign", "df_utm_campaign");
+    getUrlOrSessionParam("utm_term", "df_utm_term");
+    getUrlOrSessionParam("utm_content", "df_utm_content");
+
+    form.addEventListener("input", function() {
+      if (!formStarted) {
+        formStarted = true;
+
+        trackEvent("portfolio_form_start", {
+          form_name: "portfolio_inquiry",
+          page_url: window.location.href,
+          source: getTrafficSource(),
+          session_id: getSessionValue("df_session_id")
+        });
+      }
+    });
+
+    form.addEventListener("submit", async function(event) {
       event.preventDefault();
 
       const data = {
@@ -1789,17 +1904,76 @@
         return;
       }
 
+      if (data.website && !data.website.startsWith("http://") && !data.website.startsWith("https://")) {
+        data.website = "https://" + data.website;
+      }
+
       submitButton.disabled = true;
-      submitButton.textContent = "Opening Email...";
+      submitButton.textContent = "Sending...";
 
-      const subject = encodeURIComponent("Project Inquiry - Dante Fabillar Portfolio");
-      const body = encodeURIComponent(buildEmailBody(data));
+      const formData = new URLSearchParams();
 
-      window.location.href = "mailto:" + fallbackEmail + "?subject=" + subject + "&body=" + body;
+      formData.append("fullName", data.fullName);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("businessName", data.businessName);
+      formData.append("website", data.website);
+      formData.append("serviceNeeded", data.serviceNeeded);
+      formData.append("timeline", data.timeline);
+      formData.append("budgetRange", data.budgetRange);
+      formData.append("currentTools", data.currentTools);
+      formData.append("projectDetails", data.projectDetails);
+      formData.append("contactMethod", data.contactMethod);
+      formData.append("consent", data.consent ? "Agreed" : "Not agreed");
+      formData.append("websiteConfirm", data.websiteConfirm);
 
-      showMessage("success", "Your email app should open now. Please send the message from there.");
-      submitButton.disabled = false;
-      submitButton.textContent = "Send Inquiry";
+      formData.append("source", getTrafficSource());
+      formData.append("pageUrl", window.location.href);
+      formData.append("utmSource", getSessionValue("df_utm_source"));
+      formData.append("utmMedium", getSessionValue("df_utm_medium"));
+      formData.append("utmCampaign", getSessionValue("df_utm_campaign"));
+      formData.append("utmTerm", getSessionValue("df_utm_term"));
+      formData.append("utmContent", getSessionValue("df_utm_content"));
+      formData.append("referrer", getSessionValue("df_referrer"));
+      formData.append("sessionId", getSessionValue("df_session_id"));
+      formData.append("landingPage", getSessionValue("df_landing_page"));
+      formData.append("deviceType", getDeviceType());
+      formData.append("browser", getBrowserName());
+      formData.append("screenSize", window.screen.width + "x" + window.screen.height);
+      formData.append("timezone", Intl.DateTimeFormat().resolvedOptions().timeZone || "");
+      formData.append("visitTimestamp", getSessionValue("df_visit_timestamp"));
+
+      try {
+        await fetch(scriptURL, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
+
+        trackEvent("portfolio_inquiry_submitted", {
+          form_name: "portfolio_inquiry",
+          page_url: window.location.href,
+          source: getTrafficSource(),
+          service_needed: data.serviceNeeded || "Not selected",
+          timeline: data.timeline || "Not selected",
+          budget_range: data.budgetRange || "Not selected",
+          session_id: getSessionValue("df_session_id")
+        });
+
+        form.reset();
+
+        showMessage(
+          "success",
+          "Thank you. Your inquiry has been received. I will review the details and reply with the recommended next step."
+        );
+
+      } catch (error) {
+        openEmailFallback(data);
+        showMessage("error", "The form had an issue, so your email app should open instead.");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Inquiry";
+      }
     });
   </script>
 
