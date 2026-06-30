@@ -485,6 +485,168 @@
       font-weight: 700;
     }
 
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .profile-card-main {
+      position: relative;
+      min-width: 0;
+      padding: 30px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
+        rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(56, 189, 248, 0.20);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card-main::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.08);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .profile-avatar-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .profile-avatar {
+      width: 70px;
+      height: 70px;
+      flex: 0 0 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(34, 197, 94, 0.88));
+      color: #031525;
+      font-size: 24px;
+      font-weight: 950;
+      letter-spacing: -1px;
+      box-shadow: 0 20px 55px rgba(56, 189, 248, 0.16);
+    }
+
+    .profile-name h3 {
+      font-size: 24px;
+      letter-spacing: -0.7px;
+      margin-bottom: 4px;
+    }
+
+    .profile-name p {
+      color: #bae6fd;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .profile-story {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .profile-story strong {
+      color: #e0f2fe;
+    }
+
+    .profile-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .profile-mini-card {
+      min-width: 0;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: all 0.28s ease;
+    }
+
+    .profile-mini-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.35);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .profile-mini-card span {
+      display: block;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .profile-mini-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .profile-trust-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 0;
+      list-style: none;
+    }
+
+    .profile-trust-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .profile-trust-list li::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .profile-note {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.16);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
     .pricing {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
@@ -906,28 +1068,108 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
-      padding: 8px 12px;
+      gap: 10px;
+      min-height: 44px;
+      padding: 7px 14px 7px 8px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.045);
       border: 1px solid rgba(255, 255, 255, 0.09);
-      color: #cbd5e1;
+      color: #e2e8f0;
       font-size: 13px;
       font-weight: 800;
+      letter-spacing: 0.1px;
       transition: all 0.25s ease;
     }
 
     .footer-socials a:hover {
       transform: translateY(-2px);
-      color: #e0f2fe;
+      color: #f8fafc;
       border-color: rgba(56, 189, 248, 0.36);
       background: rgba(56, 189, 248, 0.10);
       box-shadow: 0 16px 40px rgba(56, 189, 248, 0.10);
     }
 
-    .footer-socials .social-soon {
-      color: #94a3b8;
-      opacity: 0.76;
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      flex: 0 0 28px;
+    }
+
+    .social-icon svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .social-link.linkedin .social-icon {
+      background: rgba(10, 102, 194, 0.16);
+      color: #0A66C2;
+    }
+
+    .social-link.facebook .social-icon {
+      background: rgba(24, 119, 242, 0.16);
+      color: #1877F2;
+    }
+
+    .social-link.instagram .social-icon {
+      background: linear-gradient(135deg, rgba(131, 58, 180, 0.26), rgba(253, 29, 29, 0.18), rgba(252, 176, 69, 0.22));
+      color: #F97316;
+    }
+
+
+    .footer-socials a {
+      padding: 8px 16px 8px 8px;
+      border-color: rgba(255, 255, 255, 0.11);
+      background: rgba(255, 255, 255, 0.052);
+    }
+
+    .social-icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 10px 24px rgba(0, 0, 0, 0.20);
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .social-link.linkedin .social-icon {
+      background: #0A66C2;
+      color: #ffffff;
+    }
+
+    .social-link.facebook .social-icon {
+      background: #1877F2;
+      color: #ffffff;
+    }
+
+    .social-link.instagram .social-icon {
+      background:
+        radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 14%, #fd5949 42%, #d6249f 65%, #285AEB 100%);
+      color: #ffffff;
+    }
+
+    .social-link.linkedin:hover {
+      border-color: rgba(10, 102, 194, 0.55);
+      box-shadow: 0 18px 42px rgba(10, 102, 194, 0.16);
+    }
+
+    .social-link.facebook:hover {
+      border-color: rgba(24, 119, 242, 0.55);
+      box-shadow: 0 18px 42px rgba(24, 119, 242, 0.16);
+    }
+
+    .social-link.instagram:hover {
+      border-color: rgba(214, 36, 159, 0.55);
+      box-shadow: 0 18px 42px rgba(214, 36, 159, 0.16);
     }
 
     @media (max-width: 980px) {
@@ -1017,6 +1259,28 @@
         padding: 0 18px 18px 70px;
       }
 
+
+      .profile-layout,
+      .profile-mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card-main {
+        padding: 22px;
+      }
+
+      .profile-avatar-row {
+        align-items: flex-start;
+      }
+
+      .profile-avatar {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+        border-radius: 18px;
+        font-size: 20px;
+      }
+
       .footer-inner {
         display: grid;
       }
@@ -1035,6 +1299,7 @@
         <a href="#" class="logo">Dante <span>Fabillar</span></a>
 
         <div class="nav-links">
+          <a href="#profile">Profile</a>
           <a href="#services">Services</a>
           <a href="#systems">Systems</a>
           <a href="#work">Work</a>
@@ -1129,6 +1394,93 @@
         </div>
       </div>
     </section>
+
+
+
+    <section id="profile">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Profile</div>
+          <h2 class="section-title">A technical marketing operator who can connect the work, not just complete tasks.</h2>
+          <p class="section-subtitle">
+            Clients usually need someone who can understand the business goal, check the tools, clean the workflow, and execute with care. That is the role I built my experience around.
+          </p>
+        </div>
+
+        <div class="profile-layout">
+          <div class="profile-card-main">
+            <div class="profile-avatar-row">
+              <div class="profile-avatar" aria-hidden="true">DF</div>
+              <div class="profile-name">
+                <h3>Dante Fabillar</h3>
+                <p>Senior Digital Marketing, Automation & Operations Systems Specialist</p>
+              </div>
+            </div>
+
+            <div class="profile-story">
+              <p>
+                I am a Philippines-based digital marketing and IT operations generalist with hands-on experience across
+                <strong>websites, SEO, tracking, social media operations, video content, Google Sheets systems, Apps Script, CRM workflows, reporting, and AI-assisted workflows.</strong>
+              </p>
+
+              <p>
+                My strength is connecting the practical pieces that many teams treat separately: the website, form, tracking, sheet, CRM, content calendar, report, and follow-up process. I like building systems that are easier to use, easier to check, and easier to improve.
+              </p>
+
+              <p>
+                Outside work, I enjoy science, technology, history, Bible research, and useful education. As one of Jehovah’s Witnesses, I also value honesty, discipline, clean communication, and work that is helpful to people.
+              </p>
+            </div>
+
+            <div class="profile-mini-grid">
+              <div class="profile-mini-card">
+                <span>Working style</span>
+                <p>Clear written scope, careful execution, practical updates, and clean handoff notes.</p>
+              </div>
+
+              <div class="profile-mini-card">
+                <span>Best fit</span>
+                <p>Businesses that need one person who can bridge marketing, systems, content, and technical operations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-side">
+            <div class="card">
+              <div class="icon">Trust</div>
+              <h3>What clients can expect</h3>
+              <ul class="profile-trust-list">
+                <li>I can start from a messy setup and identify what is broken, unclear, duplicated, or slowing the team down.</li>
+                <li>I understand both the marketing side and the technical side, so I can connect execution with tracking, reporting, and operations.</li>
+                <li>I work well from written instructions, screenshots, access details, examples, and clear deliverables.</li>
+                <li>I focus on useful output: cleaner pages, cleaner data, cleaner workflows, and clearer next steps.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="icon">Proof</div>
+              <h3>Experience areas</h3>
+              <p>
+                Website and WordPress support, GA4/GTM tracking, Google Sheets and Apps Script systems, CRM and funnel operations, social media management, short-form video workflow, KYC/web/transaction investigation support, and AI/LLM workflow planning.
+              </p>
+              <div class="mini-tags">
+                <span>Web + SEO</span>
+                <span>GA4 / GTM</span>
+                <span>Apps Script</span>
+                <span>CRM / Funnels</span>
+                <span>Social Ops</span>
+                <span>KYC / Research</span>
+                <span>AI Workflows</span>
+              </div>
+              <div class="profile-note">
+                Good work is not only about finishing tasks. It is also about protecting trust, access, data, deadlines, communication, and the client’s time.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="services">
       <div class="container">
@@ -2071,9 +2423,24 @@
       </div>
 
       <div class="footer-socials" aria-label="Dante Fabillar social media links">
-        <a href="https://www.linkedin.com/in/dante-fabillar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.facebook.com/danfabill" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.instagram.com/dante.fabillar/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social-link linkedin" href="https://www.linkedin.com/in/dante-fabillar/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dante Fabillar on LinkedIn">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.028-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.345V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.601 0 4.266 2.37 4.266 5.455v6.286zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.119 20.452H3.555V9H7.12v11.452z"/></svg>
+          </span>
+          <span>LinkedIn</span>
+        </a>
+        <a class="social-link facebook" href="https://www.facebook.com/danfabill" target="_blank" rel="noopener noreferrer" aria-label="Visit Dante Fabillar on Facebook">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M13.135 22v-8.834h2.966l.444-3.444h-3.41V7.523c0-.997.277-1.676 1.707-1.676H16.7V2.764C16.379 2.722 15.274 2.62 13.988 2.62c-2.685 0-4.524 1.64-4.524 4.654v2.448H6.426v3.444h3.038V22z"/></svg>
+          </span>
+          <span>Facebook</span>
+        </a>
+        <a class="social-link instagram" href="https://www.instagram.com/dante.fabillar/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dante Fabillar on Instagram">
+          <span class="social-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.8A3.95 3.95 0 003.8 7.75v8.5a3.95 3.95 0 003.95 3.95h8.5a3.95 3.95 0 003.95-3.95v-8.5a3.95 3.95 0 00-3.95-3.95zm8.95 1.35a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.8A3.2 3.2 0 1015.2 12 3.2 3.2 0 0012 8.8z"/></svg>
+          </span>
+          <span>Instagram</span>
+        </a>
       </div>
     </div>
   </footer>
