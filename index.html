@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dante Fabillar | Full-Stack Digital Marketing Systems Specialist</title>
+
+  <meta
+    name="description"
+    content="Dante Fabillar helps businesses clean up and connect websites, SEO, tracking, social media, Google Sheets systems, Apps Script automation, reporting, and AI-assisted workflows."
+  />
+
+  <meta name="theme-color" content="#0b0d12" />
+
+  <meta property="og:title" content="Dante Fabillar | Digital Marketing Systems Specialist" />
+  <meta
+    property="og:description"
+    content="Websites, SEO, tracking, content, automation, Google Sheets systems, Apps Script, reporting, and AI workflows built into cleaner business systems."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dante-fabillar.vercel.app" />
+
+  <style>
+    :root {
+      --bg: #07080c;
+      --bg-soft: #0b0d12;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-strong: rgba(255, 255, 255, 0.085);
+      --text: #f7f2e8;
+      --muted: #b8b0a4;
+      --muted-2: #8e867b;
+      --gold: #d6ad5f;
+      --gold-2: #f0d38a;
+      --gold-dark: #8b6426;
+      --line: rgba(214, 173, 95, 0.2);
+      --line-soft: rgba(255, 255, 255, 0.09);
+      --danger: #ff7b7b;
+      --success: #98f5bd;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --shadow-gold: 0 18px 50px rgba(214, 173, 95, 0.13);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(214, 173, 95, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 5%, rgba(240, 211, 138, 0.1), transparent 30%),
+        radial-gradient(circle at 50% 65%, rgba(214, 173, 95, 0.08), transparent 45%),
+        linear-gradient(180deg, #07080c 0%, #090b10 44%, #05060a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 82%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.03), transparent 12%, transparent 88%, rgba(255,255,255,0.03)),
+        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 36px, var(--max));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 94px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold-2);
+      background: rgba(214, 173, 95, 0.08);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(214, 173, 95, 0.9);
+    }
+
+    .section-title {
+      margin-top: 16px;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      max-width: 900px;
+    }
+
+    .section-lead {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      max-width: 760px;
+    }
+
+    .gold-text {
+      color: var(--gold-2);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: 0.25s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .topbar.scrolled {
+      background: rgba(7, 8, 12, 0.78);
+      border-bottom-color: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background:
+        linear-gradient(145deg, rgba(214,173,95,0.95), rgba(139,100,38,0.8)),
+        #d6ad5f;
+      color: #111;
+      font-weight: 900;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand-name strong {
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-name span {
+      color: var(--muted-2);
+      font-size: 0.78rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 9px 13px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line-soft);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 13px 18px;
+      min-height: 48px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #14100a;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 18px 46px rgba(214, 173, 95, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 60px rgba(214, 173, 95, 0.32);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.055);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--line);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 128px 0 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      max-width: 860px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #fff7df 0%, var(--gold-2) 42%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.26rem);
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted-2);
+      font-size: 0.94rem;
+    }
+
+    .hero-note strong {
+      color: var(--gold-2);
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.045);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font-size: 0.88rem;
+    }
+
+    .pill b {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 650px;
+      perspective: 1100px;
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 26px;
+      min-height: 560px;
+      border: 1px solid rgba(214,173,95,0.24);
+      border-radius: 38px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035)),
+        rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+      transform: rotateX(0deg) rotateY(-4deg);
+      transition: 0.45s ease;
+    }
+
+    .profile-card:hover {
+      transform: rotateX(0deg) rotateY(0deg) translateY(-8px);
+      border-color: rgba(214,173,95,0.46);
+      box-shadow: 0 35px 100px rgba(0,0,0,0.6);
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 25% 15%, rgba(240,211,138,0.35), transparent 28%),
+        radial-gradient(circle at 80% 15%, rgba(214,173,95,0.18), transparent 27%),
+        linear-gradient(135deg, transparent, rgba(214,173,95,0.08), transparent);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .profile-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .avatar-block {
+      display: grid;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 116px;
+      height: 116px;
+      border-radius: 31px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(214,173,95,0.98), rgba(240,211,138,0.82)),
+        #d6ad5f;
+      color: #111;
+      font-size: 2.15rem;
+      font-weight: 950;
+      box-shadow: 0 18px 50px rgba(214,173,95,0.22);
+    }
+
+    .profile-card h2 {
+      font-size: clamp(2rem, 3.3vw, 3.1rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      max-width: 400px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      max-width: 430px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(0,0,0,0.22);
+      border-radius: 20px;
+      transition: 0.25s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(214,173,95,0.35);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--gold-2);
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .mini-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 8px;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      width: min(250px, 48%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      background: rgba(13, 14, 20, 0.82);
+      backdrop-filter: blur(18px);
+      padding: 17px;
+      box-shadow: 0 22px 70px rgba(0,0,0,0.45);
+      transition: 0.3s ease;
+      animation: floaty 5.2s ease-in-out infinite;
+    }
+
+    .floating-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(214,173,95,0.35);
+    }
+
+    .floating-card.one {
+      top: 62px;
+      right: -18px;
+    }
+
+    .floating-card.two {
+      left: -20px;
+      bottom: 76px;
+      animation-delay: -1.8s;
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      font-size: 0.72rem;
+    }
+
+    .floating-card b {
+      display: block;
+      margin-top: 7px;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .floating-card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 8px;
+      line-height: 1.45;
+    }
+
+    @keyframes floaty {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -14px; }
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .stat-card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: 23px;
+      background: rgba(255,255,255,0.045);
+      transition: 0.25s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(214,173,95,0.34);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+      color: var(--gold-2);
+    }
+
+    .stat-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .card {
+      position: relative;
+      min-height: 250px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
+      padding: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+      transition: 0.3s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -45% -30%;
+      height: 150px;
+      background: radial-gradient(circle, rgba(214,173,95,0.16), transparent 65%);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(214,173,95,0.36);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.035));
+      box-shadow: 0 24px 80px rgba(0,0,0,0.36);
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(214,173,95,0.12);
+      border: 1px solid rgba(214,173,95,0.24);
+      color: var(--gold-2);
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold-2);
+      font-weight: 900;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .feature-panel {
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(214,173,95,0.11), rgba(255,255,255,0.035));
+      padding: 34px;
+      position: sticky;
+      top: 100px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-panel h3 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+    }
+
+    .feature-panel p {
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .feature-panel .btn {
+      margin-top: 24px;
+    }
+
+    .work-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line-soft);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      transition: 0.25s ease;
+    }
+
+    .work-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(214,173,95,0.34);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .work-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(214,173,95,0.12);
+      color: var(--gold-2);
+      border: 1px solid rgba(214,173,95,0.2);
+      font-weight: 950;
+    }
+
+    .work-item h3 {
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 7px;
+    }
+
+    .work-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .case-card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      padding: 28px;
+      transition: 0.3s ease;
+      min-height: 285px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .case-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(214,173,95,0.38);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.34);
+    }
+
+    .case-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(214,173,95,0.22);
+      color: var(--gold-2);
+      background: rgba(214,173,95,0.08);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .case-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.035em;
+      line-height: 1.18;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      margin-top: 11px;
+    }
+
+    .case-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .case-points span {
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.82rem;
+    }
+
+    .stack-wrap {
+      margin-top: 34px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .stack-row {
+      border: 1px solid var(--line-soft);
+      border-radius: 26px;
+      background: rgba(255,255,255,0.045);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 20px;
+      align-items: start;
+      transition: 0.25s ease;
+    }
+
+    .stack-row:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(214,173,95,0.34);
+    }
+
+    .stack-row h3 {
+      color: var(--gold-2);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .stack-tags span {
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(0,0,0,0.18);
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 0.9rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      counter-increment: step;
+      border: 1px solid var(--line-soft);
+      border-radius: 26px;
+      background: rgba(255,255,255,0.045);
+      padding: 23px;
+      transition: 0.25s ease;
+      min-height: 230px;
+    }
+
+    .process-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(214,173,95,0.35);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .process-card::before {
+      content: "0" counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(214,173,95,0.23);
+      color: var(--gold-2);
+      background: rgba(214,173,95,0.09);
+      font-weight: 950;
+      margin-bottom: 18px;
+    }
+
+    .process-card h3 {
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
+      padding: 28px;
+      min-height: 360px;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(214,173,95,0.38);
+      background:
+        linear-gradient(145deg, rgba(214,173,95,0.12), rgba(255,255,255,0.04));
+      box-shadow: var(--shadow-gold);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(214,173,95,0.42);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.33);
+    }
+
+    .pricing-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.035em;
+      margin-top: 16px;
+    }
+
+    .pricing-card p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      margin-top: 20px;
+      font-size: 0.94rem;
+    }
+
+    .pricing-card li {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .pricing-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold-2);
+      font-weight: 950;
+    }
+
+    .scope-note {
+      margin-top: 24px;
+      border: 1px solid rgba(214,173,95,0.25);
+      border-radius: 24px;
+      padding: 22px;
+      background: rgba(214,173,95,0.075);
+      color: var(--muted);
+    }
+
+    .scope-note strong {
+      color: var(--gold-2);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      margin-top: 34px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      border: 1px solid var(--line-soft);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.045);
+      padding: 18px 20px;
+      transition: 0.25s ease;
+    }
+
+    details[open] {
+      border-color: rgba(214,173,95,0.32);
+      background: rgba(255,255,255,0.07);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--gold-2);
+      font-size: 1.3rem;
+      transition: 0.2s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    .contact-shell {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .contact-info,
+    .contact-form {
+      border: 1px solid var(--line-soft);
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
+      padding: 30px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.26);
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-link {
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      padding: 15px;
+      transition: 0.22s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-5px);
+      border-color: rgba(214,173,95,0.34);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .contact-link small {
+      display: block;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 850;
+    }
+
+    .contact-link strong {
+      display: block;
+      color: var(--text);
+      margin-top: 5px;
+      overflow-wrap: anywhere;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.22);
+      color: var(--text);
+      padding: 13px 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(214,173,95,0.52);
+      box-shadow: 0 0 0 4px rgba(214,173,95,0.1);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .form-status {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .form-status.success {
+      color: var(--success);
+    }
+
+    .form-status.error {
+      color: var(--danger);
+    }
+
+    footer {
+      border-top: 1px solid var(--line-soft);
+      padding: 34px 0;
+      color: var(--muted-2);
+      font-size: 0.92rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-2);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-panel {
+      display: none;
+    }
+
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .split,
+      .faq-grid,
+      .contact-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        min-height: auto;
+      }
+
+      .profile-card {
+        min-height: auto;
+        transform: none;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .stats-grid,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-panel {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav-links,
+      .nav-cta .btn-secondary,
+      .nav-cta .btn-primary {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .mobile-panel {
+        position: fixed;
+        top: 82px;
+        left: 18px;
+        right: 18px;
+        z-index: 49;
+        display: none;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 24px;
+        background: rgba(7,8,12,0.94);
+        backdrop-filter: blur(18px);
+        padding: 14px;
+        box-shadow: var(--shadow);
+      }
+
+      .mobile-panel.open {
+        display: grid;
+      }
+
+      .mobile-panel a {
+        padding: 14px;
+        color: var(--muted);
+        border-radius: 14px;
+      }
+
+      .mobile-panel a:hover {
+        background: rgba(255,255,255,0.07);
+        color: var(--text);
+      }
+
+      .hero {
+        padding-top: 114px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 14vw, 4.8rem);
+      }
+
+      .case-grid,
+      .cards-grid,
+      .pricing-grid,
+      .stack-row,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-row {
+        gap: 14px;
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 26px, var(--max));
+      }
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand-name span {
+        display: none;
+      }
+
+      .hero-actions,
+      .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .mini-grid,
+      .stats-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .case-card,
+      .pricing-card,
+      .contact-info,
+      .contact-form,
+      .feature-panel {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .section-title {
+        letter-spacing: -0.045em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar" id="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Dante Fabillar home">
+        <span class="brand-mark">DF</span>
+        <span class="brand-name">
+          <strong>Dante Fabillar</strong>
+          <span>Marketing Systems Specialist</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#systems">Systems</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-secondary" href="#work">View Work</a>
+        <a class="btn btn-primary" href="#contact">Work With Me</a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+      </div>
+    </div>
+
+    <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#systems">Systems</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Full-Stack Digital Marketing Systems Specialist</span>
+
+          <h1>
+            I connect websites, content, tracking, automation, and reports into
+            <span>cleaner marketing systems.</span>
+          </h1>
+
+          <p class="hero-copy">
+            I help businesses manage the full digital marketing stack — websites, SEO,
+            analytics, social media, Google Sheets systems, Apps Script automation,
+            reporting, and AI-assisted workflows.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn btn-secondary" href="#systems">See What I Build</a>
+          </div>
+
+          <p class="hero-note">
+            <strong>Clear scope first.</strong> Practical systems, clean execution,
+            and realistic timelines — not random task handling or “magic” promises.
+          </p>
+
+          <div class="trust-strip" aria-label="Core skills">
+            <span class="pill"><b>Web</b> HTML/CSS/JS</span>
+            <span class="pill"><b>Automation</b> Apps Script</span>
+            <span class="pill"><b>Tracking</b> GA4/GTM</span>
+            <span class="pill"><b>Marketing</b> Social + SEO</span>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="floating-card one">
+            <small>System Thinking</small>
+            <b>Not just tasks — connected workflows.</b>
+            <p>Forms, sheets, dashboards, pages, events, and reports working together.</p>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-inner">
+              <div class="avatar-block">
+                <div class="avatar" aria-hidden="true">DF</div>
+
+                <div>
+                  <h2>Digital marketing with technical execution.</h2>
+                  <p>
+                    I work between marketing and operations — improving the parts clients
+                    often treat separately: websites, tracking, lead flows, reporting,
+                    content systems, and automation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <strong>2019+</strong>
+                  <span>Social media and digital marketing experience</span>
+                </div>
+
+                <div class="mini-card">
+                  <strong>Full Stack</strong>
+                  <span>Web, tracking, sheets, automations, and reporting</span>
+                </div>
+
+                <div class="mini-card">
+                  <strong>Systems</strong>
+                  <span>Google Sheets, formulas, Apps Script, dashboards</span>
+                </div>
+
+                <div class="mini-card">
+                  <strong>Growth</strong>
+                  <span>SEO, content, analytics, and conversion cleanup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card two">
+            <small>Client Value</small>
+            <b>Cleaner setup. Better decisions.</b>
+            <p>When tracking and reports are clear, marketing work becomes easier to improve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Highlights">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-card">
+            <strong>6+</strong>
+            <span>Core service areas connected into one marketing system</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>2019</strong>
+            <span>Started social media and digital content work</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>GA4</strong>
+            <span>Tracking, events, GTM, pixels, and performance reporting</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>GAS</strong>
+            <span>Google Apps Script, Sheets formulas, automation, and CRM workflows</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">What I Do</span>
+          <h2 class="section-title">
+            Support that goes beyond basic VA work.
+          </h2>
+          <p class="section-lead">
+            I help with practical marketing execution and the technical systems behind it.
+            That means your website, content, tracking, reports, and workflows can become
+            cleaner, easier to manage, and easier to scale.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card reveal">
+            <div class="icon">01</div>
+            <h3>Website & Funnel Improvements</h3>
+            <p>
+              Clean, responsive pages with better structure, stronger CTAs, clearer copy,
+              and conversion-focused layout.
+            </p>
+            <ul>
+              <li>HTML, CSS, JavaScript updates</li>
+              <li>WordPress, Elementor, Classic Editor, TagDiv</li>
+              <li>Landing pages, service pages, FAQ sections</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">02</div>
+            <h3>SEO & Tracking Setup</h3>
+            <p>
+              Technical cleanup so businesses can understand traffic, leads, events,
+              campaigns, and search visibility.
+            </p>
+            <ul>
+              <li>GA4, GTM, Search Console</li>
+              <li>Meta Pixel and TikTok Pixel basics</li>
+              <li>Schema, SEO fields, page structure</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">03</div>
+            <h3>Google Sheets & Automation</h3>
+            <p>
+              Better operational systems using Sheets formulas, dashboard logic,
+              Apps Script, lead tracking, and automation workflows.
+            </p>
+            <ul>
+              <li>Google Sheets formulas and lookup logic</li>
+              <li>Google Apps Script web app endpoints</li>
+              <li>CRM-style lead intake and reporting sheets</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">04</div>
+            <h3>Social Media Operations</h3>
+            <p>
+              Content systems built for consistency: planning, scheduling, captions,
+              simple graphics, analytics, and weekly reporting.
+            </p>
+            <ul>
+              <li>Meta Business Suite management</li>
+              <li>Content calendars, Reels, captions, Canva</li>
+              <li>Comments, inbox support, weekly performance reports</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">05</div>
+            <h3>Reporting & Dashboards</h3>
+            <p>
+              Clear reporting systems that make it easier to see what is working,
+              what needs fixing, and what should be improved next.
+            </p>
+            <ul>
+              <li>Weekly performance reports</li>
+              <li>Traffic, leads, campaign, and content tracking</li>
+              <li>Google Sheets dashboards and manual logs</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">06</div>
+            <h3>AI Workflow Support</h3>
+            <p>
+              AI-assisted systems for content, task flow, lead handling, reporting,
+              research, and business process cleanup.
+            </p>
+            <ul>
+              <li>AI-assisted content workflows</li>
+              <li>Prompt systems and process documentation</li>
+              <li>Business OS-style workflow planning</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="systems">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Systems Work</span>
+          <h2 class="section-title">
+            I help clean up the hidden systems behind marketing work.
+          </h2>
+          <p class="section-lead">
+            Many businesses do not fail because they lack tools. They struggle because
+            the tools are disconnected. I help organize the flow from website to form,
+            from form to sheet, from sheet to report, and from report to better decisions.
+          </p>
+        </div>
+
+        <div class="split">
+          <aside class="feature-panel reveal">
+            <h3>Practical technical support for marketing teams.</h3>
+            <p>
+              I can work inside the messy middle: website pages, tracking events,
+              Google Sheets logic, automation scripts, content calendars, dashboards,
+              and client-facing updates.
+            </p>
+            <p>
+              The goal is not to overcomplicate the business. The goal is to make the
+              workflow clear enough that the team can move faster.
+            </p>
+            <a class="btn btn-primary" href="#contact">Discuss a System</a>
+          </aside>
+
+          <div class="work-list">
+            <article class="work-item reveal">
+              <div class="work-number">01</div>
+              <div>
+                <h3>Google Sheets Operations Systems</h3>
+                <p>
+                  Formula cleanup, cross-sheet lookup logic, IFERROR handling, dashboard
+                  structure, phase checks, payroll/overtime calculation review, task
+                  logs, status tracking, and cleaner long-term sheet structure.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-item reveal">
+              <div class="work-number">02</div>
+              <div>
+                <h3>Google Apps Script Automation</h3>
+                <p>
+                  Apps Script web app endpoints, form-to-sheet lead capture, CRM-style
+                  intake, status updates, automation logic, error handling, and testing
+                  for cleaner data flow.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-item reveal">
+              <div class="work-number">03</div>
+              <div>
+                <h3>Website + Tracking Connection</h3>
+                <p>
+                  Landing page structure, form tracking, GA4 events, GTM setup, pixel
+                  checks, thank-you page logic, and basic conversion tracking so the
+                  website is not just “live” but measurable.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-item reveal">
+              <div class="work-number">04</div>
+              <div>
+                <h3>Social Media Content Systems</h3>
+                <p>
+                  Content calendars, Meta Business Suite scheduling, Reels workflow,
+                  Canva graphics, campaign angles, captions, Trello updates, and
+                  performance reporting.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-item reveal">
+              <div class="work-number">05</div>
+              <div>
+                <h3>AI Business Workflow Planning</h3>
+                <p>
+                  AI-assisted workflows for lead handling, audit forms, reporting,
+                  task planning, content creation, and business system organization.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section-title">
+            Project examples across websites, marketing, tracking, and systems.
+          </h2>
+          <p class="section-lead">
+            Some client details are kept private. The focus here is the type of work,
+            the system improved, and the business problem solved.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">Private System</span>
+              </div>
+              <h3>Affiliate Operations & Google Sheets System</h3>
+              <p>
+                Supported a private operations system involving Google Sheets formulas,
+                phase logic, lookup cleanup, calculation checks, Apps Script logic,
+                dashboards, and long-term structure improvements.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>Google Sheets</span>
+              <span>Apps Script</span>
+              <span>Formulas</span>
+              <span>Automation</span>
+              <span>Dashboards</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">AI Business OS</span>
+              </div>
+              <h3>Saionra / AI Business OS Prototype</h3>
+              <p>
+                Built and improved a modern AI business platform concept with Vercel-ready
+                front-end, lead form structure, Google Sheets capture, Apps Script endpoint,
+                CRM-style tracking, and analytics event planning.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>HTML/CSS/JS</span>
+              <span>Vercel</span>
+              <span>Apps Script</span>
+              <span>Lead Capture</span>
+              <span>CRM Sheet</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">Education</span>
+              </div>
+              <h3>Forméduc / Vol101 Digital Marketing Support</h3>
+              <p>
+                Supported social media, content calendars, GA4/Search Console setup,
+                campaign reporting, Cyberimpact updates, Trello coordination, pagination
+                QA, website task planning, and French/English client-facing updates.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>GA4</span>
+              <span>GSC</span>
+              <span>Meta Ads</span>
+              <span>Cyberimpact</span>
+              <span>Trello</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">Legal Marketing</span>
+              </div>
+              <h3>Oliveira Lawyers Website & Content Operations</h3>
+              <p>
+                Supported website updates, content management, SEO cleanup, page structure,
+                tracking-related work, visual content, social media operations, and digital
+                marketing execution for a law-focused online presence.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>WordPress</span>
+              <span>SEO</span>
+              <span>Content</span>
+              <span>Tracking</span>
+              <span>Social Media</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">Real Estate</span>
+              </div>
+              <h3>Real Estate Website & Conversion Pages</h3>
+              <p>
+                Improved service pages, CTA structure, SEO fields, visual layout, and
+                WordPress content presentation for real estate and international service
+                pages.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>WordPress</span>
+              <span>Landing Pages</span>
+              <span>SEO Fields</span>
+              <span>CTAs</span>
+              <span>UX Cleanup</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div>
+              <div class="case-top">
+                <span class="tag">Business Sites</span>
+              </div>
+              <h3>Brazil Safe Closing & Service Page Improvements</h3>
+              <p>
+                Worked on homepage, pricing, FAQ, trust blocks, page copy, structure,
+                and conversion-focused layout for service-based website presentation.
+              </p>
+            </div>
+            <div class="case-points">
+              <span>Copy</span>
+              <span>Pricing Page</span>
+              <span>FAQ</span>
+              <span>Trust Blocks</span>
+              <span>Conversion</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Technical & Marketing Stack</span>
+          <h2 class="section-title">
+            Tools I can connect across the full marketing workflow.
+          </h2>
+          <p class="section-lead">
+            I am not limited to one tool. My value is helping the full stack work together:
+            web pages, analytics, social media, forms, sheets, reports, and automations.
+          </p>
+        </div>
+
+        <div class="stack-wrap">
+          <div class="stack-row reveal">
+            <h3>Web & Front-End</h3>
+            <div class="stack-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>Vercel</span>
+              <span>GitHub</span>
+              <span>WordPress</span>
+              <span>Elementor</span>
+              <span>Classic Editor</span>
+              <span>TagDiv</span>
+            </div>
+          </div>
+
+          <div class="stack-row reveal">
+            <h3>Tracking & Analytics</h3>
+            <div class="stack-tags">
+              <span>GA4</span>
+              <span>Google Tag Manager</span>
+              <span>Google Search Console</span>
+              <span>Meta Pixel</span>
+              <span>TikTok Pixel</span>
+              <span>Conversion Events</span>
+              <span>DebugView</span>
+              <span>UTM Tracking</span>
+            </div>
+          </div>
+
+          <div class="stack-row reveal">
+            <h3>Automation & Systems</h3>
+            <div class="stack-tags">
+              <span>Google Sheets</span>
+              <span>Google Apps Script</span>
+              <span>Form-to-Sheet Workflows</span>
+              <span>CRM-Style Sheets</span>
+              <span>Dashboards</span>
+              <span>Formula Cleanup</span>
+              <span>Reports</span>
+              <span>Workflow Automation</span>
+            </div>
+          </div>
+
+          <div class="stack-row reveal">
+            <h3>Marketing Operations</h3>
+            <div class="stack-tags">
+              <span>Meta Business Suite</span>
+              <span>Content Calendars</span>
+              <span>Reels Scheduling</span>
+              <span>Canva</span>
+              <span>CapCut</span>
+              <span>SEO Cleanup</span>
+              <span>Weekly Reports</span>
+              <span>Email Marketing</span>
+              <span>Cyberimpact</span>
+              <span>Mailchimp</span>
+              <span>ActiveCampaign</span>
+            </div>
+          </div>
+
+          <div class="stack-row reveal">
+            <h3>AI Workflow Support</h3>
+            <div class="stack-tags">
+              <span>AI-Assisted Content</span>
+              <span>Prompt Systems</span>
+              <span>Business Workflow Planning</span>
+              <span>Lead Handling</span>
+              <span>Reporting Drafts</span>
+              <span>Research Workflows</span>
+              <span>Process Documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">How I Work</span>
+          <h2 class="section-title">
+            Clear scope. Clean build. Practical improvements.
+          </h2>
+          <p class="section-lead">
+            I prefer structured work because it protects both sides. Before building,
+            I clarify the goal, the current setup, the needed output, and what success
+            should look like.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="process-card reveal">
+            <h3>Review the current setup</h3>
+            <p>
+              I check the website, tools, sheets, tracking, content flow, or workflow
+              that needs improvement.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>Define the real problem</h3>
+            <p>
+              I separate surface-level tasks from the deeper system issue causing confusion
+              or slow execution.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>Build or clean the system</h3>
+            <p>
+              I work on the pages, formulas, automations, content process, reports,
+              or tracking setup needed.
+            </p>
+          </article>
+
+          <article class="process-card reveal">
+            <h3>Test and improve</h3>
+            <p>
+              I check the output, fix issues, document the flow, and make the next steps
+              easier to understand.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="engagement">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Engagement Options</span>
+          <h2 class="section-title">
+            Flexible support without unclear “do everything” expectations.
+          </h2>
+          <p class="section-lead">
+            I can support project-based work, monthly systems support, or ongoing marketing
+            operations. Scope is reviewed first so the work stays realistic and properly planned.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <div>
+              <span class="tag">Project-Based</span>
+              <h3>Website, Tracking, or System Cleanup</h3>
+              <p>
+                Best for businesses that need a specific build, fix, cleanup, or setup
+                completed with clear deliverables.
+              </p>
+              <ul>
+                <li>Landing page or WordPress cleanup</li>
+                <li>GA4/GTM/pixel setup check</li>
+                <li>Google Sheets or Apps Script workflow</li>
+                <li>SEO, FAQ, schema, or reporting cleanup</li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Request Scope Review</a>
+          </article>
+
+          <article class="pricing-card featured reveal">
+            <div>
+              <span class="tag">Most Flexible</span>
+              <h3>Monthly Digital Marketing Systems Support</h3>
+              <p>
+                Best for businesses that need ongoing help across websites, content,
+                tracking, reports, and technical marketing operations.
+              </p>
+              <ul>
+                <li>Website and content updates</li>
+                <li>Social media calendar support</li>
+                <li>Reports and dashboards</li>
+                <li>Tracking and workflow improvements</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="#contact">Discuss Monthly Support</a>
+          </article>
+
+          <article class="pricing-card reveal">
+            <div>
+              <span class="tag">Technical Ops</span>
+              <h3>Automation & Operations Systems</h3>
+              <p>
+                Best for teams with messy sheets, manual reporting, disconnected tools,
+                or workflows that need better structure.
+              </p>
+              <ul>
+                <li>Google Sheets formulas and dashboards</li>
+                <li>Apps Script automation</li>
+                <li>CRM-style lead tracking</li>
+                <li>Process documentation and testing</li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Plan a System</a>
+          </article>
+        </div>
+
+        <div class="scope-note reveal">
+          <strong>Important:</strong> I do not sell magic or unlimited work.
+          I build practical systems with clear scope, clean execution, and realistic timelines.
+          This keeps the work focused and protects quality.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="faq-grid">
+          <div class="reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2 class="section-title">Before working together.</h2>
+            <p class="section-lead">
+              A simple way to understand how I position my work and what kind of projects
+              are the best fit.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <details class="reveal" open>
+              <summary>Are you a social media manager or a developer?</summary>
+              <p>
+                I work between both sides. My background includes social media and content,
+                but I also handle website updates, tracking, Google Sheets systems,
+                Apps Script automation, reporting, and AI-assisted workflows.
+              </p>
+            </details>
+
+            <details class="reveal">
+              <summary>Can you handle full-stack digital marketing?</summary>
+              <p>
+                Yes, when the scope is clear. I can support websites, SEO, tracking,
+                social media systems, reporting, sheets, and automation. For very large
+                builds, I prefer to define phases so expectations stay realistic.
+              </p>
+            </details>
+
+            <details class="reveal">
+              <summary>Do you offer fixed pricing?</summary>
+              <p>
+                I prefer to review the project first. Some work is best as a fixed project,
+                while ongoing support is better handled through a monthly scope. This avoids
+                unclear expectations and protects the quality of the work.
+              </p>
+            </details>
+
+            <details class="reveal">
+              <summary>What makes your support different?</summary>
+              <p>
+                I do not only complete isolated tasks. I look at how the website, tools,
+                forms, tracking, reports, and workflows connect, then I help clean the
+                system so the business can move with less confusion.
+              </p>
+            </details>
+
+            <details class="reveal">
+              <summary>Can you work with existing tools?</summary>
+              <p>
+                Yes. I can work with existing WordPress sites, Google Sheets, Apps Script,
+                GA4, GTM, Meta Business Suite, email marketing tools, Trello, and other
+                business workflows.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">
+            Need help cleaning up your marketing system?
+          </h2>
+          <p class="section-lead">
+            Send a few details about your website, tools, workflow, or marketing problem.
+            I will review the scope and suggest the clearest next step.
+          </p>
+        </div>
+
+        <div class="contact-shell">
+          <aside class="contact-info reveal">
+            <h3>Good-fit projects</h3>
+            <p>
+              I am a good fit when the work needs both marketing sense and technical execution.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-link">
+                <small>Best For</small>
+                <strong>Websites, tracking, sheets, automation, content systems, and reports</strong>
+              </div>
+
+              <a class="contact-link" href="mailto:dantefabillar.media@gmail.com">
+                <small>Email</small>
+                <strong>dantefabillar.media@gmail.com</strong>
+              </a>
+
+              <a class="contact-link" href="https://dante-fabillar.vercel.app" target="_blank" rel="noreferrer">
+                <small>Website</small>
+                <strong>dante-fabillar.vercel.app</strong>
+              </a>
+
+              <div class="contact-link">
+                <small>Availability</small>
+                <strong>Project-based and monthly support available after scope review</strong>
+              </div>
+            </div>
+          </aside>
+
+          <form class="contact-form reveal" id="contactForm">
+            <h3>Tell me what you need</h3>
+            <p class="muted">
+              This form can work by email now. Later, it can be connected to Google Sheets
+              using Apps Script like the Saionra setup.
+            </p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="company">Company / Website</label>
+                <input id="company" name="company" type="text" placeholder="Company or website URL" />
+              </div>
+
+              <div class="field">
+                <label for="service">What do you need?</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose one</option>
+                  <option>Website / WordPress cleanup</option>
+                  <option>SEO / GA4 / GTM / tracking</option>
+                  <option>Google Sheets / Apps Script automation</option>
+                  <option>Social media operations</option>
+                  <option>Monthly digital marketing systems support</option>
+                  <option>AI workflow / business process support</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Project details</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your current setup, what is messy, what you want improved, and any deadline or priority."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send Project Details</button>
+              <span class="form-status" id="formStatus">No spam. Just clear project details.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Dante Fabillar. Full-Stack Digital Marketing Systems Specialist.</p>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const CONFIG = {
+      // Later, paste your Google Apps Script Web App URL here if you want form-to-Google-Sheets.
+      // Example: "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+      appsScriptUrl: "",
+
+      // Current fallback email.
+      fallbackEmail: "dantefabillar.media@gmail.com"
+    };
+
+    const topbar = document.getElementById("topbar");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobilePanel = document.getElementById("mobilePanel");
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        topbar.classList.add("scrolled");
+      } else {
+        topbar.classList.remove("scrolled");
+      }
+    });
+
+    menuBtn?.addEventListener("click", () => {
+      mobilePanel.classList.toggle("open");
+    });
+
+    mobilePanel?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobilePanel.classList.remove("open");
+      });
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    function getFormData(form) {
+      const formData = new FormData(form);
+      return Object.fromEntries(formData.entries());
+    }
+
+    function buildEmailBody(data) {
+      return [
+        "New portfolio inquiry",
+        "",
+        "Full Name: " + (data.name || ""),
+        "Email: " + (data.email || ""),
+        "Company / Website: " + (data.company || ""),
+        "Service Needed: " + (data.service || ""),
+        "",
+        "Project Details:",
+        data.message || "",
+        "",
+        "Source: dante-fabillar.vercel.app"
+      ].join("\n");
+    }
+
+    async function submitToAppsScript(data) {
+      const payload = {
+        timestamp: new Date().toISOString(),
+        source: "dante-fabillar.vercel.app",
+        ...data
+      };
+
+      const response = await fetch(CONFIG.appsScriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      return response;
+    }
+
+    contactForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const data = getFormData(contactForm);
+
+      formStatus.textContent = "Preparing your message...";
+      formStatus.className = "form-status";
+
+      if (CONFIG.appsScriptUrl && CONFIG.appsScriptUrl.trim().length > 0) {
+        try {
+          await submitToAppsScript(data);
+
+          formStatus.textContent = "Sent. Thank you — I will review the details.";
+          formStatus.className = "form-status success";
+          contactForm.reset();
+          return;
+        } catch (error) {
+          formStatus.textContent = "The form had an issue. Opening email instead...";
+          formStatus.className = "form-status error";
+        }
+      }
+
+      const subject = encodeURIComponent("Project Inquiry - Dante Fabillar Portfolio");
+      const body = encodeURIComponent(buildEmailBody(data));
+      const mailtoUrl = `mailto:${CONFIG.fallbackEmail}?subject=${subject}&body=${body}`;
+
+      formStatus.textContent = "Opening your email app to send the inquiry.";
+      formStatus.className = "form-status success";
+
+      window.location.href = mailtoUrl;
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dante Fabillar",
+      "url": "https://dante-fabillar.vercel.app",
+      "email": "mailto:dantefabillar.media@gmail.com",
+      "jobTitle": "Full-Stack Digital Marketing Systems Specialist",
+      "knowsAbout": [
+        "Digital Marketing",
+        "Social Media Management",
+        "Search Engine Optimization",
+        "Google Analytics 4",
+        "Google Tag Manager",
+        "Google Apps Script",
+        "Google Sheets Automation",
+        "WordPress",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Marketing Automation",
+        "AI Workflows"
+      ]
+    }
+  </script>
+</body>
+</html>
