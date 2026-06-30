@@ -574,6 +574,90 @@
       color: #e0f2fe;
     }
 
+
+    .faq-accordion {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.42);
+      background: rgba(255, 255, 255, 0.075);
+      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.10);
+    }
+
+    .faq-item[open] {
+      border-color: rgba(56, 189, 248, 0.42);
+      background: rgba(255, 255, 255, 0.075);
+      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.10);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.13);
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      flex: 0 0 38px;
+    }
+
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      color: #7dd3fc;
+      font-size: 20px;
+      line-height: 1;
+      transition: all 0.25s ease;
+    }
+
+    .faq-item[open] .faq-toggle {
+      transform: rotate(45deg);
+      background: rgba(56, 189, 248, 0.13);
+      border-color: rgba(56, 189, 248, 0.24);
+    }
+
+    .faq-answer {
+      padding: 0 24px 22px 76px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
     .process {
       counter-reset: step;
     }
@@ -880,6 +964,17 @@
         padding: 58px 0;
       }
 
+
+      .faq-item summary {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        padding: 18px;
+        align-items: start;
+      }
+
+      .faq-answer {
+        padding: 0 18px 18px 70px;
+      }
+
       .footer-inner {
         display: grid;
       }
@@ -911,7 +1006,7 @@
       <div>
         <div class="badge">
           <span class="badge-dot"></span>
-          Senior Digital Marketing, Automation & Operations Systems Specialist
+          Senior digital marketing, automation & operations systems specialist
         </div>
 
         <h1>
@@ -1499,49 +1594,263 @@
       <div class="container">
         <div class="section-head">
           <div class="section-label">FAQ</div>
-          <h2 class="section-title">Common questions before working together.</h2>
+          <h2 class="section-title">Clear answers before working together.</h2>
           <p class="section-subtitle">
-            Clear answers for businesses looking for senior digital marketing, automation, operations, tracking, investigation, and AI workflow support.
+            Specific answers for businesses that want senior digital marketing, automation, operations, tracking, investigation, and AI workflow support without long back-and-forth.
           </p>
         </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <div class="icon">Q1</div>
-            <h3>What does a senior digital marketing systems specialist do?</h3>
-            <p>
-              I connect websites, tracking, CRMs, Google Sheets, automations, reporting dashboards,
-              content operations, investigation workflows, and AI systems so marketing and business operations become easier
-              to manage and improve.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">Q2</div>
-            <h3>Can you help with Google Sheets and Apps Script automation?</h3>
-            <p>
-              Yes. I support Google Sheets formulas, dashboards, lookup logic, Apps Script workflows,
-              form-to-sheet systems, CRM-style lead tracking, and reporting automation.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">Q3</div>
-            <h3>Can you help with GA4, GTM, and tracking setup?</h3>
-            <p>
-              Yes. I support GA4, Google Tag Manager, Search Console, conversion event checks,
-              Meta Pixel, TikTok Pixel, UTM tracking, and reporting dashboards.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">Q4</div>
-            <h3>Do you support KYC, web investigation, and transaction review work?</h3>
-            <p>
-              Yes. I can support KYC-style auditing, web investigation, transaction review support,
-              data quality checks, research, categorization, and documentation.
-            </p>
-          </div>
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary>
+              <span class="faq-number">01</span>
+              <span>What does a senior digital marketing systems specialist do?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>I connect websites, tracking, CRMs, Google Sheets, automations, reporting dashboards, content operations, investigation workflows, and AI systems so marketing and business operations become easier to manage, measure, and improve.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">02</span>
+              <span>Why should a business hire you instead of a basic virtual assistant?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>I can handle execution, but I also understand the systems behind the work: website structure, tracking, data flow, automations, reporting, content operations, and QA. That means I can help fix the workflow, not only complete isolated tasks.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">03</span>
+              <span>Can we start without a live interview or meeting?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. Most projects can start with a clear written brief, access details, examples, and a defined first task. Written scope also helps avoid confusion because the deliverables, timeline, and priority are clear before work begins.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">04</span>
+              <span>Can you take a messy setup and organize it?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can review the current website, sheets, tracking, CRM, content workflow, reports, or automation setup, then identify what is broken, duplicated, missing, or slowing the team down.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">05</span>
+              <span>Can you help with WordPress, landing pages, and front-end fixes?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I support WordPress, Elementor, Classic Editor, TagDiv, HTML, CSS, JavaScript, responsive page cleanup, service pages, FAQ sections, CTA improvements, and landing page structure.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">06</span>
+              <span>Can you work with Vercel, GitHub, and custom HTML/CSS/JS pages?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can work with static websites, Vercel deployments, GitHub-based updates, custom HTML/CSS/JavaScript pages, lead forms, front-end improvements, and lightweight web app interfaces.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">07</span>
+              <span>Can you support backend logic, APIs, and webhooks?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can help with form endpoints, API-style data flow, JSON payloads, webhook-based workflows, Google Apps Script backend logic, and lightweight serverless-style integrations.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">08</span>
+              <span>Can you help with Google Sheets and Apps Script automation?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I support Google Sheets formulas, dashboards, lookup logic, IFERROR cleanup, status tracking, Apps Script workflows, form-to-sheet systems, CRM-style lead tracking, and reporting automation.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">09</span>
+              <span>Can you build lead capture from a website to Google Sheets?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can connect website forms to Google Sheets using Apps Script, capture lead details, UTM data, source, device details, status, priority, and email notifications for easier follow-up.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">10</span>
+              <span>Can you help with GA4, GTM, and tracking setup?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I support GA4, Google Tag Manager, Google Search Console, conversion event checks, Meta Pixel, TikTok Pixel, UTM tracking, DebugView checks, and reporting dashboards.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">11</span>
+              <span>Can you help if tracking is already installed but not reliable?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can review whether events, forms, buttons, thank-you pages, pixels, tags, and UTM sources are working properly, then document what needs to be fixed or cleaned.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">12</span>
+              <span>Can you help with SEO and website structure?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can support SEO titles, meta descriptions, headings, internal structure, FAQ sections, schema markup, page clarity, service copy, technical cleanup, and search-focused content improvements.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">13</span>
+              <span>Can you help with CRM and funnel operations?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can support CRM-style lead flow, pipelines, tags, segmentation, follow-up logic, forms, client records, reporting, and funnel operations using tools like GoHighLevel, HubSpot, ActiveCampaign, Mailchimp, and similar platforms.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">14</span>
+              <span>Can you help with e-commerce websites?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can support Shopify and WooCommerce pages, product page cleanup, landing pages, checkout-related content, tracking, email flow support, reporting, and conversion-focused improvements.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">15</span>
+              <span>Can you manage social media operations?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can help with content calendars, Meta Business Suite, captions, scheduling, Reels workflow, Canva graphics, content organization, analytics checks, and weekly performance reporting.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">16</span>
+              <span>Can you edit videos for Reels, Shorts, or TikTok-style content?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can support short-form video editing and formatting using tools like CapCut and Filmora, including captions, simple cuts, repurposing, content formatting, and social media-ready exports.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">17</span>
+              <span>Can you support KYC, web investigation, and transaction review work?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I have experience with careful online review work, including KYC-style auditing support, web investigation, transaction review support, data quality checks, research, categorization, and documentation.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">18</span>
+              <span>Can you work on data quality, QA, and documentation tasks?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can support content QA, page checks, spreadsheet cleanup, data validation, manual logs, SOPs, issue notes, research categorization, and task handoff documentation.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">19</span>
+              <span>Can you use AI and LLM workflows for business tasks?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I can use AI and LLM workflows for research, content drafts, reporting drafts, SOPs, task planning, internal workflow support, prompt systems, and business process cleanup.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">20</span>
+              <span>Will you disclose every internal tool you use?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>No. The focus is the business outcome: cleaner systems, better execution, clearer reports, and faster workflows. Internal tools are selected based on the task, privacy, cost, and what gives the client the best practical result.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">21</span>
+              <span>Can you work with existing tools instead of forcing a new system?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. I prefer to review the current setup first. If the existing tools can support the goal, I clean and connect them before recommending anything new.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">22</span>
+              <span>Do you offer hourly, project-based, and monthly support?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. Hourly support starts at $45/hour for clearly scoped senior implementation work. Project-based work and monthly support are quoted after scope review based on timeline, complexity, and responsibility.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">23</span>
+              <span>What type of project should start with an audit?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>An audit is best when the client is not sure what is broken. I can review the website, tracking, CRM, sheets, content workflow, reports, or automation setup, then provide a priority fix list.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">24</span>
+              <span>How fast can you start?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>For a clear task with the right access and assets, I can usually start faster because I work well from written instructions. Larger systems should begin with a scope review so the first output is realistic and useful.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-number">25</span>
+              <span>What do you need from a client to begin?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>I usually need the goal, website or tool links, current issue, required access, sample files or screenshots, deadline, preferred contact method, and the expected output. From there, I can review and recommend the next step.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -2070,38 +2379,206 @@
         "@id": "https://dante-fabillar.vercel.app/#faq",
         "mainEntity": [
           {
-            "@type": "Question",
-            "name": "What does a senior digital marketing systems specialist do?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A senior digital marketing systems specialist connects websites, tracking, CRMs, Google Sheets, automations, reporting dashboards, content operations, investigation workflows, and AI systems so marketing and business operations become easier to manage and improve."
-            }
+                    "@type": "Question",
+                    "name": "What does a senior digital marketing systems specialist do?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "I connect websites, tracking, CRMs, Google Sheets, automations, reporting dashboards, content operations, investigation workflows, and AI systems so marketing and business operations become easier to manage, measure, and improve."
+                    }
           },
           {
-            "@type": "Question",
-            "name": "Can Dante Fabillar help with Google Sheets and Apps Script automation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Dante supports Google Sheets formulas, dashboards, lookup logic, Google Apps Script workflows, form-to-sheet systems, CRM-style lead tracking, and reporting automation."
-            }
+                    "@type": "Question",
+                    "name": "Why should a business hire you instead of a basic virtual assistant?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "I can handle execution, but I also understand the systems behind the work: website structure, tracking, data flow, automations, reporting, content operations, and QA. That means I can help fix the workflow, not only complete isolated tasks."
+                    }
           },
           {
-            "@type": "Question",
-            "name": "Can Dante Fabillar help with GA4, GTM, and tracking setup?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Dante supports GA4, Google Tag Manager, Google Search Console, conversion event checks, Meta Pixel, TikTok Pixel, UTM tracking, and reporting dashboards."
-            }
+                    "@type": "Question",
+                    "name": "Can we start without a live interview or meeting?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. Most projects can start with a clear written brief, access details, examples, and a defined first task. Written scope also helps avoid confusion because the deliverables, timeline, and priority are clear before work begins."
+                    }
           },
           {
-            "@type": "Question",
-            "name": "Does Dante Fabillar support KYC, web investigation, and transaction review work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Dante has experience with careful online review work including KYC-style auditing support, web investigation, transaction review support, data quality checks, research, categorization, and documentation."
-            }
+                    "@type": "Question",
+                    "name": "Can you take a messy setup and organize it?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can review the current website, sheets, tracking, CRM, content workflow, reports, or automation setup, then identify what is broken, duplicated, missing, or slowing the team down."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with WordPress, landing pages, and front-end fixes?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I support WordPress, Elementor, Classic Editor, TagDiv, HTML, CSS, JavaScript, responsive page cleanup, service pages, FAQ sections, CTA improvements, and landing page structure."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you work with Vercel, GitHub, and custom HTML/CSS/JS pages?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can work with static websites, Vercel deployments, GitHub-based updates, custom HTML/CSS/JavaScript pages, lead forms, front-end improvements, and lightweight web app interfaces."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you support backend logic, APIs, and webhooks?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can help with form endpoints, API-style data flow, JSON payloads, webhook-based workflows, Google Apps Script backend logic, and lightweight serverless-style integrations."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with Google Sheets and Apps Script automation?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I support Google Sheets formulas, dashboards, lookup logic, IFERROR cleanup, status tracking, Apps Script workflows, form-to-sheet systems, CRM-style lead tracking, and reporting automation."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you build lead capture from a website to Google Sheets?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can connect website forms to Google Sheets using Apps Script, capture lead details, UTM data, source, device details, status, priority, and email notifications for easier follow-up."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with GA4, GTM, and tracking setup?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I support GA4, Google Tag Manager, Google Search Console, conversion event checks, Meta Pixel, TikTok Pixel, UTM tracking, DebugView checks, and reporting dashboards."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help if tracking is already installed but not reliable?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can review whether events, forms, buttons, thank-you pages, pixels, tags, and UTM sources are working properly, then document what needs to be fixed or cleaned."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with SEO and website structure?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can support SEO titles, meta descriptions, headings, internal structure, FAQ sections, schema markup, page clarity, service copy, technical cleanup, and search-focused content improvements."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with CRM and funnel operations?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can support CRM-style lead flow, pipelines, tags, segmentation, follow-up logic, forms, client records, reporting, and funnel operations using tools like GoHighLevel, HubSpot, ActiveCampaign, Mailchimp, and similar platforms."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you help with e-commerce websites?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can support Shopify and WooCommerce pages, product page cleanup, landing pages, checkout-related content, tracking, email flow support, reporting, and conversion-focused improvements."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you manage social media operations?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can help with content calendars, Meta Business Suite, captions, scheduling, Reels workflow, Canva graphics, content organization, analytics checks, and weekly performance reporting."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you edit videos for Reels, Shorts, or TikTok-style content?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can support short-form video editing and formatting using tools like CapCut and Filmora, including captions, simple cuts, repurposing, content formatting, and social media-ready exports."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you support KYC, web investigation, and transaction review work?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I have experience with careful online review work, including KYC-style auditing support, web investigation, transaction review support, data quality checks, research, categorization, and documentation."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you work on data quality, QA, and documentation tasks?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can support content QA, page checks, spreadsheet cleanup, data validation, manual logs, SOPs, issue notes, research categorization, and task handoff documentation."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you use AI and LLM workflows for business tasks?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I can use AI and LLM workflows for research, content drafts, reporting drafts, SOPs, task planning, internal workflow support, prompt systems, and business process cleanup."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Will you disclose every internal tool you use?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "No. The focus is the business outcome: cleaner systems, better execution, clearer reports, and faster workflows. Internal tools are selected based on the task, privacy, cost, and what gives the client the best practical result."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Can you work with existing tools instead of forcing a new system?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. I prefer to review the current setup first. If the existing tools can support the goal, I clean and connect them before recommending anything new."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "Do you offer hourly, project-based, and monthly support?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. Hourly support starts at $45/hour for clearly scoped senior implementation work. Project-based work and monthly support are quoted after scope review based on timeline, complexity, and responsibility."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "What type of project should start with an audit?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "An audit is best when the client is not sure what is broken. I can review the website, tracking, CRM, sheets, content workflow, reports, or automation setup, then provide a priority fix list."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "How fast can you start?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "For a clear task with the right access and assets, I can usually start faster because I work well from written instructions. Larger systems should begin with a scope review so the first output is realistic and useful."
+                    }
+          },
+          {
+                    "@type": "Question",
+                    "name": "What do you need from a client to begin?",
+                    "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "I usually need the goal, website or tool links, current issue, required access, sample files or screenshots, deadline, preferred contact method, and the expected output. From there, I can review and recommend the next step."
+                    }
           }
-        ]
+]
       }
     ]
   }
