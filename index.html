@@ -884,8 +884,50 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 800;
+      transition: all 0.25s ease;
+    }
+
+    .footer-socials a:hover {
+      transform: translateY(-2px);
+      color: #e0f2fe;
+      border-color: rgba(56, 189, 248, 0.36);
+      background: rgba(56, 189, 248, 0.10);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.10);
+    }
+
+    .footer-socials .social-soon {
+      color: #94a3b8;
+      opacity: 0.76;
     }
 
     @media (max-width: 980px) {
@@ -977,6 +1019,10 @@
 
       .footer-inner {
         display: grid;
+      }
+
+      .footer-socials {
+        justify-content: flex-start;
       }
     }
   </style>
@@ -2019,8 +2065,16 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 Dante Fabillar. All rights reserved.</span>
-      <span>Websites • Backend • Tracking • Automation • CRM • E-commerce • KYC • AI Systems</span>
+      <div class="footer-copy">
+        <span>© 2026 Dante Fabillar. All rights reserved.</span>
+        <span>Websites • Backend • Tracking • Automation • CRM • E-commerce • KYC • AI Systems</span>
+      </div>
+
+      <div class="footer-socials" aria-label="Dante Fabillar social media links">
+        <a href="https://www.linkedin.com/in/dante-fabillar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/danfabill" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/dante.fabillar/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
     </div>
   </footer>
   <script>
@@ -2330,7 +2384,9 @@
           "Reporting Dashboards"
         ],
         "sameAs": [
-          "https://dante-fabillar.vercel.app/"
+          "https://www.linkedin.com/in/dante-fabillar/",
+          "https://www.facebook.com/danfabill",
+          "https://www.instagram.com/dante.fabillar/"
         ]
       },
       {
