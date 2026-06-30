@@ -4,26 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dante Fabillar | Senior Full-Stack Digital Marketing, Automation & AI Systems Specialist</title>
+  <title>Senior Digital Marketing Systems Specialist | Dante Fabillar</title>
 
   <meta
     name="description"
-    content="Dante Fabillar is a Senior Full-Stack Digital Marketing, Automation & AI Systems Specialist helping businesses improve websites, backend integrations, SEO, GA4, GTM, CRM workflows, Google Sheets systems, Apps Script automation, social media operations, video content, reporting, and LLM-assisted workflows."
+    content="Senior digital marketing systems specialist for websites, SEO, GA4, GTM, Google Sheets automation, Apps Script, CRM workflows, WordPress, Shopify, social media operations, KYC web investigation, transaction review, reporting dashboards, and AI-assisted workflows."
   />
 
-  <meta name="theme-color" content="#050816" />
+  <meta
+    name="keywords"
+    content="Senior Digital Marketing Systems Specialist, Technical Marketing Operations Specialist, Google Sheets Automation Specialist, Google Apps Script Specialist, GA4 GTM Tracking Specialist, WordPress SEO Specialist, CRM Automation Support, KYC Web Investigation, Transaction Review Support, Shopify Support, Social Media Operations, AI Workflow Specialist, LLM Workflow Support, Dante Fabillar"
+  />
 
-  <meta property="og:title" content="Dante Fabillar | Senior Full-Stack Digital Marketing Systems Specialist" />
+  <meta name="author" content="Dante Fabillar" />
+  <meta name="theme-color" content="#050816" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <link rel="canonical" href="https://dante-fabillar.vercel.app/" />
+
+  <meta property="og:site_name" content="Dante Fabillar Portfolio" />
+  <meta property="og:title" content="Senior Digital Marketing Systems Specialist | Dante Fabillar" />
   <meta
     property="og:description"
-    content="Websites, backend integrations, SEO, GA4, GTM, CRMs, Google Sheets, Apps Script, Make, n8n, GHL, Shopify, social media, video editing, reporting dashboards, and LLM workflow support."
+    content="Websites, SEO, GA4/GTM, Google Sheets automation, Apps Script, CRM workflows, WordPress, Shopify, social media operations, KYC web investigation, transaction review, reporting dashboards, and AI-assisted workflows."
   />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dante-fabillar.vercel.app" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://dante-fabillar.vercel.app/" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Senior Digital Marketing Systems Specialist | Dante Fabillar" />
+  <meta
+    name="twitter:description"
+    content="Senior digital marketing, automation, operations, tracking, WordPress, Apps Script, CRM, KYC/web investigation, transaction review, and AI workflow support."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
@@ -48,6 +70,8 @@
 
     html {
       scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -58,12 +82,24 @@
         var(--bg);
       color: var(--text);
       line-height: 1.6;
+      max-width: 100%;
       overflow-x: hidden;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    li,
+    span,
+    strong,
+    small {
+      overflow-wrap: break-word;
     }
 
     .container {
@@ -85,12 +121,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 900;
       letter-spacing: -0.6px;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -100,7 +138,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       color: var(--muted);
       font-size: 14px;
       font-weight: 600;
@@ -108,6 +146,7 @@
 
     .nav-links a {
       transition: color 0.25s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -125,7 +164,7 @@
     .hero {
       min-height: calc(100vh - 76px);
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
       gap: 54px;
       align-items: center;
       padding: 86px 0;
@@ -148,6 +187,7 @@
     .badge-dot {
       width: 8px;
       height: 8px;
+      flex: 0 0 8px;
       border-radius: 50%;
       background: var(--green);
       box-shadow: 0 0 18px var(--green);
@@ -194,6 +234,7 @@
       font-family: inherit;
       cursor: pointer;
       transition: all 0.28s ease;
+      text-align: center;
     }
 
     .btn-primary {
@@ -236,6 +277,7 @@
     }
 
     .hero-panel {
+      min-width: 0;
       position: relative;
       padding: 1px;
       border-radius: 30px;
@@ -244,6 +286,7 @@
     }
 
     .dashboard-card {
+      min-width: 0;
       background: rgba(11, 16, 32, 0.92);
       border-radius: 30px;
       padding: 26px;
@@ -267,12 +310,13 @@
 
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       margin-bottom: 18px;
     }
 
     .metric {
+      min-width: 0;
       padding: 18px;
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.055);
@@ -304,6 +348,7 @@
     }
 
     .audit-item {
+      min-width: 0;
       display: flex;
       justify-content: space-between;
       gap: 14px;
@@ -357,17 +402,18 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 20px;
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
       gap: 20px;
     }
 
     .card {
+      min-width: 0;
       padding: 26px;
       border-radius: var(--radius);
       background: var(--card);
@@ -384,6 +430,7 @@
 
     .icon {
       width: 44px;
+      min-width: 44px;
       height: 44px;
       display: grid;
       place-items: center;
@@ -391,7 +438,7 @@
       margin-bottom: 18px;
       background: rgba(56, 189, 248, 0.13);
       color: #7dd3fc;
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 900;
     }
 
@@ -440,11 +487,12 @@
 
     .pricing {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
       gap: 22px;
     }
 
     .price-card {
+      min-width: 0;
       position: relative;
       padding: 30px;
       border-radius: 28px;
@@ -466,9 +514,9 @@
     }
 
     .popular {
-      position: absolute;
-      top: 18px;
-      right: 18px;
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 14px;
       font-size: 12px;
       font-weight: 900;
       padding: 7px 10px;
@@ -479,7 +527,7 @@
     }
 
     .price {
-      font-size: 34px;
+      font-size: 38px;
       font-weight: 900;
       margin: 16px 0;
       letter-spacing: -1.4px;
@@ -487,7 +535,7 @@
     }
 
     .price small {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       font-weight: 600;
     }
@@ -532,6 +580,7 @@
 
     .process .card {
       position: relative;
+      padding-right: 76px;
     }
 
     .process .card::before {
@@ -547,7 +596,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
       gap: 34px;
       align-items: start;
       padding: 42px;
@@ -560,6 +609,7 @@
     }
 
     .contact-info {
+      min-width: 0;
       position: sticky;
       top: 110px;
     }
@@ -622,6 +672,7 @@
     }
 
     .contact-form {
+      min-width: 0;
       display: grid;
       gap: 16px;
       padding: 24px;
@@ -632,11 +683,12 @@
 
     .form-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
 
     .contact-form label {
+      min-width: 0;
       display: grid;
       gap: 8px;
       color: #dbeafe;
@@ -664,6 +716,7 @@
     .contact-form textarea,
     .contact-form select {
       width: 100%;
+      min-width: 0;
       padding: 14px 15px;
       border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.13);
@@ -710,6 +763,7 @@
 
     .consent-row input {
       width: auto;
+      min-width: auto;
       margin-top: 3px;
       accent-color: var(--blue);
     }
@@ -750,17 +804,8 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 1100px) {
-      .pricing {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .hero,
-      .grid,
-      .grid-2,
-      .pricing,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -778,17 +823,12 @@
         display: none;
       }
 
-      .metric-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
         letter-spacing: -2px;
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 620px) {
       nav {
         height: 68px;
       }
@@ -814,6 +854,11 @@
         text-align: center;
       }
 
+      .metric-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
       .dashboard-card,
       .price-card,
       .card,
@@ -825,6 +870,10 @@
       .dashboard-top,
       .audit-item {
         align-items: flex-start;
+      }
+
+      .audit-item {
+        flex-direction: column;
       }
 
       section {
@@ -850,6 +899,7 @@
           <a href="#work">Work</a>
           <a href="#stack">Stack</a>
           <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact" class="nav-cta">Work With Me</a>
         </div>
       </nav>
@@ -861,18 +911,18 @@
       <div>
         <div class="badge">
           <span class="badge-dot"></span>
-          Senior full-stack digital marketing, automation & AI systems specialist
+          Senior digital marketing, automation & operations systems specialist
         </div>
 
         <h1>
           I build the systems behind
-          <span class="gradient-text">modern digital marketing.</span>
+          <span class="gradient-text">modern digital operations.</span>
         </h1>
 
         <p class="hero-text">
           I help businesses connect websites, backend integrations, tracking, CRMs, funnels,
-          Google Sheets, Apps Script, Make/n8n/Zapier workflows, Shopify, social media,
-          video content, reporting, and LLM-assisted systems into one clearer workflow.
+          Google Sheets, Apps Script, e-commerce, social media, video content, reporting,
+          KYC/web investigation, transaction review, and AI-assisted workflows into one clearer operating system.
         </p>
 
         <div class="buttons">
@@ -884,16 +934,16 @@
           <span>Web + Backend</span>
           <span>GA4 + GTM</span>
           <span>Apps Script</span>
-          <span>Make / n8n</span>
-          <span>GHL / CRM</span>
-          <span>LLM Workflows</span>
+          <span>CRM / Funnels</span>
+          <span>KYC / Investigation</span>
+          <span>AI Workflows</span>
         </div>
       </div>
 
       <div class="hero-panel">
         <div class="dashboard-card">
           <div class="dashboard-top">
-            <strong>Senior Marketing Systems Snapshot</strong>
+            <strong>Senior Operations Systems Snapshot</strong>
             <span class="status">Available</span>
           </div>
 
@@ -909,29 +959,29 @@
             </div>
 
             <div class="metric">
-              <small>Automation</small>
-              <strong>n8n/Make</strong>
+              <small>Operations</small>
+              <strong>CRM/Ops</strong>
             </div>
 
             <div class="metric">
-              <small>AI Systems</small>
-              <strong>LLMs</strong>
+              <small>Investigation</small>
+              <strong>KYC/Web</strong>
             </div>
           </div>
 
           <div class="audit-list">
             <div class="audit-item">
-              <span><b>Backend & Integrations</b><br>Forms, APIs, webhooks, data flow, serverless logic</span>
+              <span><b>Backend & Integrations</b><br>Forms, APIs, webhooks, data flow, serverless-style logic</span>
               <span class="score">Build</span>
             </div>
 
             <div class="audit-item">
-              <span><b>CRM & Funnels</b><br>GHL, HubSpot, lead pipelines, follow-up workflows</span>
+              <span><b>Marketing Operations</b><br>CRM, funnels, lead flow, social content, reporting</span>
               <span class="score">Ops</span>
             </div>
 
             <div class="audit-item">
-              <span><b>Growth Stack</b><br>Shopify, WordPress, tracking, content, reports, AI workflows</span>
+              <span><b>Risk & Research Support</b><br>KYC auditing, transaction review, web investigation, data checks</span>
               <span class="score">Senior</span>
             </div>
           </div>
@@ -943,10 +993,10 @@
       <div class="container">
         <div class="section-head">
           <div class="section-label">Services</div>
-          <h2 class="section-title">Senior support across marketing, websites, backend systems, automation, and AI workflows.</h2>
+          <h2 class="section-title">Senior support across marketing, websites, backend systems, automation, investigation, and AI workflows.</h2>
           <p class="section-subtitle">
-            This is not beginner VA support. I work across the visible marketing work and the technical system behind it:
-            websites, data flow, tracking, CRMs, automations, reports, content, and AI-assisted operations.
+            This is not beginner VA support. I work across the visible marketing work and the technical operations behind it:
+            websites, data flow, tracking, CRMs, reports, content, compliance checks, and AI-assisted systems.
           </p>
         </div>
 
@@ -997,17 +1047,17 @@
 
           <div class="card">
             <div class="icon">CRM</div>
-            <h3>CRM, Funnels & Automation</h3>
-            <p>Support modern lead flows, follow-up systems, CRM pipelines, funnel logic, and automation platforms.</p>
+            <h3>CRM, Funnels & Operations</h3>
+            <p>Support modern lead flows, follow-up systems, CRM pipelines, funnel logic, and marketing operations.</p>
             <ul>
-              <li>GoHighLevel, HubSpot, ActiveCampaign</li>
-              <li>Make, n8n, Zapier, webhooks</li>
-              <li>Lead routing, follow-ups, tags, pipelines</li>
+              <li>GoHighLevel, HubSpot, ActiveCampaign-style workflows</li>
+              <li>Lead routing, follow-ups, tags, and pipelines</li>
+              <li>Email marketing and client communication flow</li>
             </ul>
           </div>
 
           <div class="card">
-            <div class="icon">Ecom</div>
+            <div class="icon">Shop</div>
             <h3>E-commerce & Shopify Support</h3>
             <p>Help improve e-commerce pages, tracking, product flow, landing pages, checkout support, and reporting logic.</p>
             <ul>
@@ -1040,6 +1090,17 @@
           </div>
 
           <div class="card">
+            <div class="icon">KYC</div>
+            <h3>KYC, Web & Transaction Investigation</h3>
+            <p>Support online review work that requires careful checking, pattern recognition, documentation, and risk-aware thinking.</p>
+            <ul>
+              <li>KYC auditing and identity/document review support</li>
+              <li>Web and transaction investigation</li>
+              <li>Data quality checks, online research, and case notes</li>
+            </ul>
+          </div>
+
+          <div class="card">
             <div class="icon">AI</div>
             <h3>AI & LLM Workflow Support</h3>
             <p>Use AI and LLM workflows to improve content, research, reports, internal processes, documentation, and automation planning.</p>
@@ -1047,6 +1108,28 @@
               <li>Prompt systems and workflow planning</li>
               <li>AI-assisted reports and content systems</li>
               <li>Business OS-style process cleanup</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon">Ops</div>
+            <h3>Technical Operations Support</h3>
+            <p>Help teams organize tasks, tools, reports, documentation, workflows, and recurring digital operations.</p>
+            <ul>
+              <li>Trello, ClickUp, Notion, Airtable-style workflows</li>
+              <li>Manual logs, SOPs, task tracking, QA checks</li>
+              <li>Marketing and operations reporting flow</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon">QA</div>
+            <h3>Data, Content & QA Review</h3>
+            <p>Support careful review work for content accuracy, page structure, data cleanup, formatting, and operational quality checks.</p>
+            <ul>
+              <li>Content review and page QA</li>
+              <li>Spreadsheet data cleanup and validation</li>
+              <li>Research, categorization, and documentation</li>
             </ul>
           </div>
         </div>
@@ -1057,7 +1140,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-label">Systems</div>
-          <h2 class="section-title">The technical work behind cleaner marketing operations.</h2>
+          <h2 class="section-title">The technical work behind cleaner marketing and business operations.</h2>
           <p class="section-subtitle">
             Many businesses already have tools. The problem is that the tools are disconnected.
             I help connect the flow from website to form, form to CRM, CRM to automation,
@@ -1086,8 +1169,8 @@
 
           <div class="card">
             <div class="icon">04</div>
-            <h3>Automation Workflows</h3>
-            <p>Make, n8n, Zapier, GHL workflows, email triggers, lead notifications, task routing, and reporting automations.</p>
+            <h3>Marketing Operations Flow</h3>
+            <p>Lead notifications, task routing, CRM updates, content calendars, reporting workflows, and operations cleanup.</p>
           </div>
 
           <div class="card">
@@ -1110,14 +1193,14 @@
 
           <div class="card">
             <div class="icon">08</div>
-            <h3>AI / LLM Operations</h3>
-            <p>LLM-assisted research, content systems, reporting drafts, internal assistants, SOPs, task planning, and process documentation.</p>
+            <h3>Investigation & Review Systems</h3>
+            <p>KYC support, transaction review, web investigation, data checks, research workflows, and organized case documentation.</p>
           </div>
 
           <div class="card">
             <div class="icon">09</div>
-            <h3>Reporting Dashboards</h3>
-            <p>Google Sheets dashboards, campaign logs, lead tracking, performance summaries, manual logs, and client-ready reports.</p>
+            <h3>AI / LLM Operations</h3>
+            <p>LLM-assisted research, content systems, reporting drafts, internal assistants, SOPs, task planning, and process documentation.</p>
           </div>
         </div>
       </div>
@@ -1127,7 +1210,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-label">Selected Work</div>
-          <h2 class="section-title">Project examples across websites, marketing, tracking, automation, and systems.</h2>
+          <h2 class="section-title">Project examples across websites, marketing, tracking, automation, investigation, and systems.</h2>
           <p class="section-subtitle">
             Some client details are private. These examples focus on the type of system improved and the kind of work handled.
           </p>
@@ -1216,17 +1299,17 @@
 
           <div class="card">
             <div class="icon">06</div>
-            <h3>Brazil Safe Closing Page Improvements</h3>
+            <h3>KYC, Data Review & Online Investigation Background</h3>
             <p>
-              Worked on homepage, pricing, FAQ, trust blocks, copy structure,
-              and conversion-focused layout for a service-based website.
+              Experience with careful online review work including KYC-style checks, web investigation,
+              transaction review support, data quality tasks, research, categorization, and documentation.
             </p>
             <div class="mini-tags">
-              <span>Copy</span>
-              <span>Pricing Page</span>
-              <span>FAQ</span>
-              <span>Trust Blocks</span>
-              <span>Conversion</span>
+              <span>KYC Audit</span>
+              <span>Web Investigation</span>
+              <span>Transaction Review</span>
+              <span>Research</span>
+              <span>Data QA</span>
             </div>
           </div>
         </div>
@@ -1236,10 +1319,11 @@
     <section id="stack">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">Technical & Marketing Stack</div>
+          <div class="section-label">Technical & Operations Stack</div>
           <h2 class="section-title">Tools, platforms, and systems I can work with or adapt to quickly.</h2>
           <p class="section-subtitle">
             My value is not only knowing tools. It is helping those tools work together in a practical business system.
+            I keep the public list focused on client-facing platforms and outcomes.
           </p>
         </div>
 
@@ -1253,7 +1337,7 @@
           <div class="card">
             <div class="icon">API</div>
             <h3>Backend, APIs & Data</h3>
-            <p>APIs, webhooks, JSON, REST-style integrations, Google Apps Script backend, form endpoints, serverless logic, database basics.</p>
+            <p>APIs, webhooks, JSON, REST-style integrations, Google Apps Script backend, form endpoints, serverless-style logic, database basics.</p>
           </div>
 
           <div class="card">
@@ -1264,8 +1348,8 @@
 
           <div class="card">
             <div class="icon">Auto</div>
-            <h3>Automation Platforms</h3>
-            <p>Make, n8n, Zapier, Google Apps Script, webhooks, task routing, notifications, reporting automations, workflow triggers.</p>
+            <h3>Workflow Automation</h3>
+            <p>Automation planning, webhook-based workflows, task routing, notifications, reporting automations, trigger logic, and process cleanup.</p>
           </div>
 
           <div class="card">
@@ -1293,9 +1377,27 @@
           </div>
 
           <div class="card">
+            <div class="icon">KYC</div>
+            <h3>KYC, Web & Transaction Review</h3>
+            <p>KYC auditing support, web investigation, transaction review, online research, data quality checks, case notes, categorization.</p>
+          </div>
+
+          <div class="card">
             <div class="icon">LLM</div>
             <h3>AI & LLM Workflow Support</h3>
-            <p>ChatGPT-style workflows, Claude/Gemini-style LLM workflows, prompt systems, internal assistants, research workflows, SOPs, reporting drafts.</p>
+            <p>ChatGPT-style workflows, Claude/Gemini-style LLM workflows, prompt systems, internal assistants, research workflows, SOPs, reports.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">Data</div>
+            <h3>Data & Spreadsheet Systems</h3>
+            <p>Google Sheets formulas, dashboards, lookup logic, status tracking, data cleanup, validation, reporting, and manual log systems.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">QA</div>
+            <h3>Quality Review & Documentation</h3>
+            <p>Content QA, page checks, workflow documentation, SOPs, reporting notes, issue logs, process review, and task handoff support.</p>
           </div>
         </div>
       </div>
@@ -1308,7 +1410,7 @@
           <h2 class="section-title">International-level pricing without lowball positioning.</h2>
           <p class="section-subtitle">
             I do not position this as beginner support. Rates are based on senior implementation,
-            technical marketing systems, backend integrations, automation work, and clear business value.
+            technical marketing systems, backend integrations, operations support, investigation work, automation, and clear business value.
           </p>
         </div>
 
@@ -1352,25 +1454,12 @@
             </ul>
             <a href="#contact" class="btn btn-secondary">Discuss Monthly</a>
           </div>
-
-          <div class="price-card">
-            <h3>Technical Marketing Ops Partner</h3>
-            <div class="price">$2,500+ <small>/month</small></div>
-            <p>Best for broader ownership across marketing systems, backend integrations, automation, tracking, and AI workflows.</p>
-            <ul>
-              <li>CRM and funnel support</li>
-              <li>Backend/API/webhook coordination</li>
-              <li>Automation and reporting systems</li>
-              <li>Senior technical marketing ownership</li>
-            </ul>
-            <a href="#contact" class="btn btn-secondary">Discuss Partnership</a>
-          </div>
         </div>
 
         <div class="rate-note">
           <strong>Hourly support starts at $45/hour</strong> for clearly scoped senior implementation work.
           Backend integrations, Apps Script systems, tracking cleanup, automation workflows, CRM/funnel systems,
-          and broader technical marketing ownership are quoted after scope review.
+          investigation/review work, and broader technical marketing operations are quoted after scope review.
           No unlimited work. No unclear “do everything” setup.
         </div>
       </div>
@@ -1390,17 +1479,68 @@
         <div class="grid">
           <div class="card">
             <h3>Review</h3>
-            <p>I check the current website, tracking, CRM, sheet, automation, content workflow, report, or backend connection.</p>
+            <p>I check the current website, tracking, CRM, sheet, automation, content workflow, report, investigation task, or backend connection.</p>
           </div>
 
           <div class="card">
             <h3>Prioritize</h3>
-            <p>I identify what is broken, unclear, missing, or wasting time, then recommend what should be fixed first.</p>
+            <p>I identify what is broken, unclear, missing, risky, or wasting time, then recommend what should be fixed first.</p>
           </div>
 
           <div class="card">
             <h3>Build</h3>
-            <p>I clean up the system, improve the workflow, test the output, and make the next step clear.</p>
+            <p>I clean up the system, improve the workflow, test the output, document the process, and make the next step clear.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Common questions before working together.</h2>
+          <p class="section-subtitle">
+            Clear answers for businesses looking for senior digital marketing, automation, operations, tracking, investigation, and AI workflow support.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="icon">Q1</div>
+            <h3>What does a senior digital marketing systems specialist do?</h3>
+            <p>
+              I connect websites, tracking, CRMs, Google Sheets, automations, reporting dashboards,
+              content operations, investigation workflows, and AI systems so marketing and business operations become easier
+              to manage and improve.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">Q2</div>
+            <h3>Can you help with Google Sheets and Apps Script automation?</h3>
+            <p>
+              Yes. I support Google Sheets formulas, dashboards, lookup logic, Apps Script workflows,
+              form-to-sheet systems, CRM-style lead tracking, and reporting automation.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">Q3</div>
+            <h3>Can you help with GA4, GTM, and tracking setup?</h3>
+            <p>
+              Yes. I support GA4, Google Tag Manager, Search Console, conversion event checks,
+              Meta Pixel, TikTok Pixel, UTM tracking, and reporting dashboards.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">Q4</div>
+            <h3>Do you support KYC, web investigation, and transaction review work?</h3>
+            <p>
+              Yes. I can support KYC-style auditing, web investigation, transaction review support,
+              data quality checks, research, categorization, and documentation.
+            </p>
           </div>
         </div>
       </div>
@@ -1411,7 +1551,7 @@
         <div class="contact-grid">
           <div class="contact-info">
             <div class="section-label">Start Here</div>
-            <h2 class="section-title">Send the website, system, automation, or marketing problem you want to fix.</h2>
+            <h2 class="section-title">Send the website, system, automation, investigation, or marketing problem you want to fix.</h2>
             <p class="section-subtitle">
               Share the key details so I can understand the scope and recommend the clearest next step.
             </p>
@@ -1422,8 +1562,8 @@
               <span>✓ Tracking check</span>
               <span>✓ CRM / GHL</span>
               <span>✓ Sheets / Apps Script</span>
-              <span>✓ Make / n8n</span>
               <span>✓ Shopify</span>
+              <span>✓ KYC / Investigation</span>
               <span>✓ AI workflows</span>
             </div>
 
@@ -1433,12 +1573,12 @@
               <div class="next-steps">
                 <div class="next-step">
                   <span>1</span>
-                  <p>I review your website, tools, workflow, automation, or main marketing concern.</p>
+                  <p>I review your website, tools, workflow, automation, investigation task, or main marketing concern.</p>
                 </div>
 
                 <div class="next-step">
                   <span>2</span>
-                  <p>I identify what is unclear, broken, missing, or causing wasted time.</p>
+                  <p>I identify what is unclear, broken, missing, risky, or causing wasted time.</p>
                 </div>
 
                 <div class="next-step">
@@ -1476,7 +1616,7 @@
 
             <label>
               Main project need
-              <textarea id="projectDetails" name="projectDetails" rows="4" placeholder="Example: We need help with our website, tracking, CRM, Google Sheets workflow, automation, Shopify store, social media system, AI workflow, or reports..." required></textarea>
+              <textarea id="projectDetails" name="projectDetails" rows="4" placeholder="Example: We need help with our website, tracking, CRM, Google Sheets workflow, automation, Shopify store, social media system, KYC/web investigation, AI workflow, or reports..." required></textarea>
             </label>
 
             <div class="form-row">
@@ -1488,13 +1628,14 @@
                   <option value="Backend / API / webhook integration">Backend / API / webhook integration</option>
                   <option value="SEO / GA4 / GTM / tracking">SEO / GA4 / GTM / tracking</option>
                   <option value="Google Sheets / Apps Script automation">Google Sheets / Apps Script automation</option>
-                  <option value="CRM / GHL / funnel automation">CRM / GHL / funnel automation</option>
-                  <option value="Make / n8n / Zapier workflow">Make / n8n / Zapier workflow</option>
+                  <option value="CRM / GHL / funnel operations">CRM / GHL / funnel operations</option>
+                  <option value="Workflow automation / operations cleanup">Workflow automation / operations cleanup</option>
                   <option value="Shopify / WooCommerce support">Shopify / WooCommerce support</option>
                   <option value="Social media operations">Social media operations</option>
                   <option value="Video editing / creative workflow">Video editing / creative workflow</option>
+                  <option value="KYC / web / transaction investigation">KYC / web / transaction investigation</option>
                   <option value="AI / LLM workflow support">AI / LLM workflow support</option>
-                  <option value="Monthly digital marketing systems support">Monthly digital marketing systems support</option>
+                  <option value="Monthly digital operations support">Monthly digital operations support</option>
                   <option value="Not sure yet">Not sure yet</option>
                 </select>
               </label>
@@ -1545,7 +1686,7 @@
 
               <label>
                 Current tools <span class="optional">Optional</span>
-                <input type="text" id="currentTools" name="currentTools" placeholder="WordPress, Shopify, GHL, GA4, Sheets, Make, n8n, etc.">
+                <input type="text" id="currentTools" name="currentTools" placeholder="WordPress, Shopify, GHL, GA4, Sheets, CRM, etc.">
               </label>
             </div>
 
@@ -1571,7 +1712,7 @@
   <footer>
     <div class="container footer-inner">
       <span>© 2026 Dante Fabillar. All rights reserved.</span>
-      <span>Websites • Backend • Tracking • Automation • CRM • E-commerce • AI Systems</span>
+      <span>Websites • Backend • Tracking • Automation • CRM • E-commerce • KYC • AI Systems</span>
     </div>
   </footer>
 
@@ -1583,7 +1724,7 @@
     const fallbackEmail = "dantefabillar.media@gmail.com";
 
     function isValidEmail(email) {
-      return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     function showMessage(type, message) {
@@ -1610,7 +1751,7 @@
         data.projectDetails || "",
         "",
         "Source: dante-fabillar.vercel.app"
-      ].join("\\n");
+      ].join("\n");
     }
 
     form.addEventListener("submit", function(event) {
@@ -1664,42 +1805,133 @@
   </script>
 
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Dante Fabillar",
-      "url": "https://dante-fabillar.vercel.app",
-      "email": "mailto:dantefabillar.media@gmail.com",
-      "jobTitle": "Senior Full-Stack Digital Marketing, Automation & AI Systems Specialist",
-      "knowsAbout": [
-        "Digital Marketing",
-        "Marketing Automation",
-        "Social Media Management",
-        "Search Engine Optimization",
-        "Google Analytics 4",
-        "Google Tag Manager",
-        "Google Apps Script",
-        "Google Sheets Automation",
-        "WordPress",
-        "Shopify",
-        "WooCommerce",
-        "GoHighLevel",
-        "HubSpot",
-        "Make",
-        "n8n",
-        "Zapier",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "APIs",
-        "Webhooks",
-        "Backend Integrations",
-        "AI Workflows",
-        "Large Language Models",
-        "Video Editing",
-        "Reporting Dashboards"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://dante-fabillar.vercel.app/#person",
+        "name": "Dante Fabillar",
+        "url": "https://dante-fabillar.vercel.app/",
+        "email": "mailto:dantefabillar.media@gmail.com",
+        "jobTitle": "Senior Digital Marketing, Automation & Operations Systems Specialist",
+        "description": "Senior digital marketing systems specialist supporting websites, SEO, GA4, GTM, Google Sheets automation, Google Apps Script, CRM workflows, WordPress, Shopify, social media operations, KYC web investigation, transaction review, reporting dashboards, and AI-assisted workflows.",
+        "knowsAbout": [
+          "Digital Marketing Systems",
+          "Technical Marketing Operations",
+          "Marketing Automation",
+          "Search Engine Optimization",
+          "Google Analytics 4",
+          "Google Tag Manager",
+          "Google Search Console",
+          "Google Apps Script",
+          "Google Sheets Automation",
+          "WordPress",
+          "Shopify",
+          "WooCommerce",
+          "GoHighLevel",
+          "HubSpot",
+          "CRM Workflows",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "APIs",
+          "Webhooks",
+          "Backend Integrations",
+          "KYC Auditing",
+          "Web Investigation",
+          "Transaction Review",
+          "AI Workflows",
+          "Large Language Models",
+          "Social Media Operations",
+          "Video Editing",
+          "Reporting Dashboards"
+        ],
+        "sameAs": [
+          "https://dante-fabillar.vercel.app/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://dante-fabillar.vercel.app/#website",
+        "url": "https://dante-fabillar.vercel.app/",
+        "name": "Dante Fabillar Portfolio",
+        "description": "Portfolio website of Dante Fabillar, a senior digital marketing, automation, operations, tracking, investigation, and AI systems specialist.",
+        "publisher": {
+          "@id": "https://dante-fabillar.vercel.app/#person"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://dante-fabillar.vercel.app/#service",
+        "name": "Dante Fabillar Digital Marketing Systems Support",
+        "url": "https://dante-fabillar.vercel.app/",
+        "description": "Senior digital marketing systems support for websites, SEO, GA4/GTM tracking, Google Sheets automation, Apps Script, CRM workflows, WordPress, Shopify, social media operations, KYC/web investigation, transaction review, reporting dashboards, and AI workflows.",
+        "founder": {
+          "@id": "https://dante-fabillar.vercel.app/#person"
+        },
+        "areaServed": "Worldwide",
+        "availableLanguage": [
+          "English",
+          "Filipino",
+          "Cebuano"
+        ],
+        "serviceType": [
+          "Digital Marketing Systems",
+          "Website and Funnel Support",
+          "Backend Integration Support",
+          "Google Analytics and Tag Manager Setup",
+          "Google Sheets Automation",
+          "Google Apps Script Automation",
+          "CRM and Funnel Operations",
+          "Social Media Operations",
+          "KYC and Web Investigation Support",
+          "Transaction Review Support",
+          "AI Workflow Support",
+          "Reporting Dashboard Support"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dante-fabillar.vercel.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a senior digital marketing systems specialist do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A senior digital marketing systems specialist connects websites, tracking, CRMs, Google Sheets, automations, reporting dashboards, content operations, investigation workflows, and AI systems so marketing and business operations become easier to manage and improve."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Dante Fabillar help with Google Sheets and Apps Script automation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Dante supports Google Sheets formulas, dashboards, lookup logic, Google Apps Script workflows, form-to-sheet systems, CRM-style lead tracking, and reporting automation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Dante Fabillar help with GA4, GTM, and tracking setup?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Dante supports GA4, Google Tag Manager, Google Search Console, conversion event checks, Meta Pixel, TikTok Pixel, UTM tracking, and reporting dashboards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Dante Fabillar support KYC, web investigation, and transaction review work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Dante has experience with careful online review work including KYC-style auditing support, web investigation, transaction review support, data quality checks, research, categorization, and documentation."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </body>
 </html>
